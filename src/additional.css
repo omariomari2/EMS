@@ -1,0 +1,95 @@
+/* additional.css - Custom styles for the contact form */
+
+.contact-form-container {
+  background: rgba(24, 24, 27, 0.92);
+  border-radius: 1.5rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), 0 2px 8px rgba(0, 0, 0, 0.2);
+  border: 1.5px solid rgba(63, 63, 70, 0.3);
+  padding: 2.5rem 2rem;
+  width: 99%;
+  height: 99%;
+  margin: 0 auto;
+  transition: box-shadow 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.contact-form-container:hover {
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4), 0 4px 16px rgba(0, 0, 0, 0.3);
+  border-color: rgba(82, 82, 91, 0.5);
+}
+
+.contact-form-title {
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  letter-spacing: 0.01em;
+  font-family: inherit;
+}
+
+.contact-form-label {
+  color: #d1d5db;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  display: block;
+  letter-spacing: 0.01em;
+  font-size: 0.875rem;
+  font-family: inherit;
+}
+
+.contact-form-input,
+.contact-form-textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border-radius: 0.75rem;
+  background: #18181b;
+  color: #fff;
+  border: 1.5px solid #27272a;
+  font-size: 0.875rem;
+  margin-bottom: 1.25rem;
+  transition: border 0.2s, box-shadow 0.2s;
+  outline: none;
+  resize: none;
+  font-family: inherit;
+}
+
+.contact-form-input:focus,
+.contact-form-textarea:focus {
+  border-color: #52525b;
+  box-shadow: 0 0 0 2px rgba(82, 82, 91, 0.2);
+}
+
+.contact-form-button {
+  width: 100%;
+  padding: 0.9rem 0;
+  border-radius: 0.75rem;
+  background: linear-gradient(90deg, #52525b 0%, #71717a 100%);
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.875rem;
+  border: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s, transform 0.1s;
+  font-family: inherit;
+}
+
+.contact-form-button:hover, .contact-form-button:focus {
+  background: linear-gradient(90deg, #71717a 0%, #52525b 100%);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  transform: translateY(-2px) scale(1.01);
+}
+
+@media (max-width: 600px) {
+  .contact-form-container {
+    padding: 1.25rem 0.5rem;
+    width: 99%;
+    height: 99%;
+  }
+  .contact-form-title {
+    font-size: 1.25rem;
+  }
+} 

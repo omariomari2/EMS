@@ -1,0 +1,182 @@
+.customcard-main-container {
+  font-family: "Trebuchet MS", sans-serif;
+  position: relative;
+  height: 203px;
+  aspect-ratio: 1.579;
+  border-radius: 1em;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 300ms ease-in;
+}
+.customcard-main-container:hover {
+  transform: rotateZ(1deg) rotateY(10deg) scale(1.1);
+  box-shadow: 0 5em 2em #111;
+}
+
+.customcard-border {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1em;
+  background: linear-gradient(
+    115deg,
+    rgba(0, 0, 0, 0.33) 12%,
+    rgba(255, 255, 255, 0.33) 27%,
+    rgba(255, 255, 255, 0.33) 31%,
+    rgba(0, 0, 0, 0.33) 52%
+  );
+}
+
+.customcard-border:hover:after {
+  position: absolute;
+  content: " ";
+  height: 50em;
+  aspect-ratio: 1.58;
+  border-radius: 1em;
+  background: linear-gradient(
+    115deg,
+    rgba(0, 0, 0, 1) 42%,
+    rgba(255, 255, 255, 1) 47%,
+    rgba(255, 255, 255, 1) 51%,
+    rgba(0, 0, 0, 1) 52%
+  );
+  animation: customcard-rotate 4s linear infinite;
+  z-index: 1;
+  opacity: 0.05;
+}
+
+.customcard-card {
+  height: 12.5em;
+  aspect-ratio: 1.586;
+  border-radius: 1em;
+  background-color: #999;
+  opacity: 0.8;
+  background-image: linear-gradient(to right, #777, #777 2px, #999 2px, #999);
+  background-size: 4px 100%;
+}
+
+.customcard-shadow {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 0.85em;
+  border: 1px solid #bbb;
+  background:
+    radial-gradient(
+        circle at 100% 100%,
+        #ffffff 0,
+        #ffffff 8px,
+        transparent 8px
+      )
+      0% 0%/13px 13px no-repeat,
+    radial-gradient(circle at 0 100%, #ffffff 0, #ffffff 8px, transparent 8px)
+      100% 0%/13px 13px no-repeat,
+    radial-gradient(circle at 100% 0, #ffffff 0, #ffffff 8px, transparent 8px)
+      0% 100%/13px 13px no-repeat,
+    radial-gradient(circle at 0 0, #ffffff 0, #ffffff 8px, transparent 8px) 100%
+      100%/13px 13px no-repeat,
+    linear-gradient(#ffffff, #ffffff) 50% 50% / calc(100% - 10px)
+      calc(100% - 26px) no-repeat,
+    linear-gradient(#ffffff, #ffffff) 50% 50% / calc(100% - 26px)
+      calc(100% - 10px) no-repeat,
+    linear-gradient(
+      135deg,
+      rgba(3, 3, 3, 0.5) 0%,
+      transparent 22%,
+      transparent 47%,
+      transparent 73%,
+      rgba(0, 0, 0, 0.5) 100%
+    );
+  box-sizing: border-box;
+}
+
+.customcard-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 0.6em;
+  border: 1px solid #aaa;
+  box-shadow: -1px -1px 0 #ddd;
+  transform: translate(-50%, -50%);
+  height: 12em;
+  aspect-ratio: 1.604;
+  background-image: linear-gradient(to right, #777, #555 2px, #aaa 2px, #aaa);
+  background-size: 4px 100%;
+}
+
+.customcard-rev {
+  top: 0.5em;
+  left: 0.75em;
+  color: #fff;
+  font-size: 1.25em;
+}
+
+.customcard-master {
+  position: absolute;
+  bottom: 1.25em;
+  right: 0.5em;
+  background: linear-gradient(
+    90deg,
+    rgba(75, 75, 75, 0.25) 0%,
+    rgba(121, 121, 121, 1) 100%
+  );
+  color: #fff;
+  height: 2.5em;
+  width: 2.5em;
+  border: 1px solid #bbb;
+  border-radius: 50%;
+}
+
+.customcard-master.customcard-one {
+  right: 2em;
+  background: #000;
+  border: 1px solid #222;
+}
+
+.customcard-master.customcard-two {
+  background: #fff;
+  border: 1px solid #bbb;
+}
+
+.customcard-master-text {
+  bottom: 0.25em;
+  right: 0.8em;
+  font-size: 0.75em;
+}
+
+.customcard-ultra-text {
+  top: -4px;
+  right: 1.75em;
+  font-size: 0.85em;
+  color: #fff;
+}
+
+.customcard-ultra-text,
+.customcard-master-text,
+.customcard-rev {
+  position: absolute;
+  text-shadow: 0 2px 8px #000, 0 0 2px #fff, 0 0 8px #000;
+  color: #fff;
+  opacity: 1;
+  font-weight: 400;
+}
+
+.customcard-chip {
+  position: absolute;
+  top: 27.5%;
+  left: 8.25%;
+}
+
+@keyframes customcard-rotate {
+  0% {
+    transform: translate(-25em, -15em);
+  }
+  20% {
+    transform: translate(25em, 15em);
+  }
+  100% {
+    transform: translate(25em, 15em);
+  }
+}
