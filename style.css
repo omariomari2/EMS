@@ -938,28 +938,28 @@ svg .cookiescriptlogo,
 
 /* CTA Button */
 .experience-modal__cta {
-  background-color: #D4AF37;
-  /* Gold */
-  color: #000;
-  border: none;
+  background-color: #ffffff;
+  color: #000000;
+  border: 1px solid #000000;
   padding: 1rem 2rem;
   font-size: 1rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1px;
   cursor: pointer;
-  border-radius: 4px;
-  /* Slight round */
+  border-radius: 50px;
+  /* Oval */
   transition: all 0.3s ease;
   width: 100%;
   margin-top: 1rem;
 }
 
 .experience-modal__cta:hover {
-  background-color: #fff;
-  color: #000;
+  background-color: #000000;
+  color: #ffffff;
+  border-color: #000000;
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 /* Fix for Contact Modal Z-Index */

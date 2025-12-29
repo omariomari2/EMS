@@ -109,45 +109,90 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // --- DYNAMIC FORM CONFIG ---
   const serviceSchemas = {
-    'Travel and Tour': [
-      { label: 'Destination', name: 'Destination', type: 'text', placeholder: 'e.g., Dubai, Cape Town' },
-      { label: 'Departure Date', name: 'Departure-Date', type: 'date' },
-      { label: 'No. of Travelers', name: 'Travelers', type: 'number', placeholder: '1' }
-    ],
-    'Chop Bar': [
-      { label: 'Order Details', name: 'Order-Details', type: 'textarea', placeholder: 'What would you like to eat?' },
-      { label: 'Service Type', name: 'Service-Type', type: 'select', options: ['Dine-in', 'Takeaway', 'Delivery'] }
-    ],
-    'Salon': [
-      { label: 'Preferred Date', name: 'Date', type: 'date' },
-      { label: 'Preferred Time', name: 'Time', type: 'time' },
-      { label: 'Service Type', name: 'Service-Type', type: 'text', placeholder: 'e.g., Braids, Haircut, Manicure' }
-    ],
-    'Massage': [
-      { label: 'Preferred Date', name: 'Date', type: 'date' },
-      { label: 'Preferred Time', name: 'Time', type: 'time' },
-      { label: 'Duration', name: 'Duration', type: 'select', options: ['30 Mins', '60 Mins', '90 Mins'] }
-    ],
-    'Washing Bay': [
-      { label: 'Car Model', name: 'Car-Model', type: 'text', placeholder: 'e.g., Toyota Camry' },
-      { label: 'Service', name: 'Service-Type', type: 'select', options: ['Full Wash', 'Exterior Only', 'Interior Detailing'] },
-      { label: 'Preferred Time', name: 'Time', type: 'time' }
-    ],
-    'Rental Offices': [
-      { label: 'Team Size', name: 'Team-Size', type: 'number', placeholder: 'e.g., 5' },
-      { label: 'Duration (Months)', name: 'Duration', type: 'number', placeholder: 'e.g., 12' },
-      { label: 'Start Date', name: 'Start-Date', type: 'date' }
-    ],
-    'Fuel Station': [
-      { label: 'Fuel Type', name: 'Fuel-Type', type: 'select', options: ['Petrol', 'Diesel', 'V-Power'] },
-      { label: 'Amount (GHS)', name: 'Amount', type: 'number', placeholder: 'e.g., 500' }
-    ],
-    'Supermarket': [
-      { label: 'Shopping List / Inquiry', name: 'Inquiry', type: 'textarea', placeholder: 'List items or ask about availability...' }
-    ],
-    'Cold Store': [
-      { label: 'Bulk Order / Inquiry', name: 'Inquiry', type: 'textarea', placeholder: 'List items (Fish, Meat, etc.)...' }
-    ]
+    'Travel and Tour': {
+      title: 'Plan Your Trip',
+      description: 'Tell us where you want to go, and we will handle the rest.',
+      fields: [
+        { label: 'Destination', name: 'Destination', type: 'text', placeholder: 'e.g., Dubai, Cape Town' },
+        { label: 'Departure Date', name: 'Departure-Date', type: 'date' },
+        { label: 'No. of Travelers', name: 'Travelers', type: 'number', placeholder: '1' }
+      ]
+    },
+    'Chop Bar': {
+      title: 'Place Food Order',
+      description: 'Let us know what you are craving.',
+      fields: [
+        { label: 'Order Details', name: 'Order-Details', type: 'textarea', placeholder: 'What would you like to eat?' },
+        { label: 'Service Type', name: 'Service-Type', type: 'select', options: ['Dine-in', 'Takeaway', 'Delivery'] }
+      ]
+    },
+    'Salon': {
+      title: 'Book Appointment',
+      description: 'Schedule your beauty session with us.',
+      fields: [
+        { label: 'Preferred Date', name: 'Date', type: 'date' },
+        { label: 'Preferred Time', name: 'Time', type: 'time' },
+        { label: 'Service Type', name: 'Service-Type', type: 'text', placeholder: 'e.g., Braids, Haircut, Manicure' }
+      ]
+    },
+    'Massage': {
+      title: 'Book Massage',
+      description: 'Relax and recharge. Book your session now.',
+      fields: [
+        { label: 'Preferred Date', name: 'Date', type: 'date' },
+        { label: 'Preferred Time', name: 'Time', type: 'time' },
+        { label: 'Duration', name: 'Duration', type: 'select', options: ['30 Mins', '60 Mins', '90 Mins'] }
+      ]
+    },
+    'Washing Bay': {
+      title: 'Vehicle Service',
+      description: 'Book a wash or detailing service for your car.',
+      fields: [
+        { label: 'Car Model', name: 'Car-Model', type: 'text', placeholder: 'e.g., Toyota Camry' },
+        { label: 'Service', name: 'Service-Type', type: 'select', options: ['Full Wash', 'Exterior Only', 'Interior Detailing'] },
+        { label: 'Preferred Time', name: 'Time', type: 'time' }
+      ]
+    },
+    'Rental Offices': {
+      title: 'Office Inquiry',
+      description: 'Find the perfect workspace for your team.',
+      fields: [
+        { label: 'Team Size', name: 'Team-Size', type: 'number', placeholder: 'e.g., 5' },
+        { label: 'Duration (Months)', name: 'Duration', type: 'number', placeholder: 'e.g., 12' },
+        { label: 'Start Date', name: 'Start-Date', type: 'date' }
+      ]
+    },
+    'Fuel Station': {
+      title: 'Fuel Inquiry / Order',
+      description: 'Let us know your fuel needs or bulk order request.',
+      fields: [
+        { label: 'Fuel Type', name: 'Fuel-Type', type: 'select', options: ['Petrol', 'Diesel', 'V-Power'] },
+        { label: 'Amount (GHS)', name: 'Amount', type: 'number', placeholder: 'e.g., 500' }
+      ]
+    },
+    'Supermarket': {
+      title: 'Product Inquiry',
+      description: 'Check if an item is in stock or request a special order.',
+      fields: [
+        { label: 'Shopping List / Inquiry', name: 'Inquiry', type: 'textarea', placeholder: 'List items or ask about availability...' }
+      ]
+    },
+    'Cold Store': {
+      title: 'Bulk Order Inquiry',
+      description: 'Order fresh fish, meat, and poultry in bulk.',
+      fields: [
+        { label: 'Bulk Order / Inquiry', name: 'Inquiry', type: 'textarea', placeholder: 'List items (Fish, Meat, etc.)...' }
+      ]
+    },
+    'Executive Lounge': {
+      title: 'Lounge Reservation',
+      description: 'Reserve a spot for comfort and privacy.',
+      fields: [
+        { label: 'Date', name: 'Date', type: 'date' },
+        { label: 'Time', name: 'Time', type: 'time' },
+        { label: 'Number of Guests', name: 'Guests', type: 'number' }
+      ]
+    }
   };
 
   function renderFormFields(service) {
@@ -155,7 +200,8 @@ document.addEventListener('DOMContentLoaded', function () {
     if (!container) return;
 
     container.innerHTML = ''; // Clear previous
-    const fields = serviceSchemas[service] || []; // Default to empty if not found
+    const config = serviceSchemas[service] || { fields: [] }; // Default to empty fields
+    const fields = config.fields || [];
 
     fields.forEach(field => {
       const group = document.createElement('div');
@@ -202,6 +248,31 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
+  // CTA Click Listener
+  if (modalCta) {
+    modalCta.addEventListener('click', function (e) {
+      e.stopPropagation(); // Prevent bubbling issues
+
+      if (accessModal) {
+        const config = serviceSchemas[currentServiceName] || {};
+        const title = config.title || `Book ${currentServiceName}`;
+        const desc = config.description || `Complete the form below to book ${currentServiceName}. We'll get back to you shortly.`;
+
+        // 1. Update Booking Modal Text
+        if (accessModalTitle) accessModalTitle.textContent = title;
+        if (accessModalDesc) accessModalDesc.textContent = desc;
+
+        // 2. Render Dynamic Fields
+        renderFormFields(currentServiceName);
+
+        // 3. Open Modal
+        const modalGroup = document.querySelector('[data-modal-group-status]');
+        if (modalGroup) modalGroup.setAttribute('data-modal-group-status', 'active');
+
+        accessModal.setAttribute('data-modal-status', 'active');
+      }
+    });
+  }
   // --- FORM LOGIC MERGED ---
   if (accessForm) {
     accessForm.addEventListener('submit', function (e) {
@@ -544,6 +615,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Dynamic CTA Data
     const ctaText = card.getAttribute('data-card-cta') || "Book Service";
     const serviceName = card.getAttribute('data-card-service') || title;
+    const details = card.getAttribute('data-card-details'); // Extended content
 
     let imgSrc = '';
     if (img) {
@@ -552,7 +624,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     modalTitle.textContent = title;
     modalSubtitle.textContent = subtitle;
-    modalDescription.textContent = text;
+    modalDescription.textContent = details || text; // Use details if available, else fallback
     modalImage.src = imgSrc;
     modalImage.alt = title;
 
@@ -566,31 +638,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
-  // CTA Click Listener
-  if (modalCta) {
-    modalCta.addEventListener('click', function (e) {
-      e.stopPropagation(); // Prevent bubbling issues
 
-      if (accessModal) {
-        // 1. Update Booking Modal Text
-        if (accessModalTitle) accessModalTitle.textContent = `Book ${currentServiceName}`;
-        if (accessModalDesc) accessModalDesc.textContent = `Complete the form below to book ${currentServiceName}. We'll get back to you shortly.`;
-
-        // 2. Render Dynamic Fields
-        renderFormFields(currentServiceName);
-
-        // 3. Open Modal (using data attributes as seen in HTML)
-        // The site seems to use data-modal-status logic.
-        const modalGroup = document.querySelector('[data-modal-group-status]');
-        if (modalGroup) modalGroup.setAttribute('data-modal-group-status', 'active');
-
-        accessModal.setAttribute('data-modal-status', 'active');
-
-        // Ensure close button works (if not handled by other scripts)
-        // existing scripts likely handle [data-modal-close]
-      }
-    });
-  }
 
   function handleCloseReset() {
     // Kill any active tweens to prevent conflicts
