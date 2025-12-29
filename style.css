@@ -642,3 +642,331 @@ svg .cookiescriptlogo,
 .big-text__title--small {
   font-size: 0.75em;
 }
+
+/* ---------- EXPERIENCE MODAL ---------- */
+
+.experience-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1000;
+  display: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  /* Prevent clicks when hidden */
+}
+
+.experience-modal.is--active {
+  display: flex;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.experience-modal__backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.4);
+  /* Removed blur */
+  z-index: -1;
+}
+
+/* ... existing code ... */
+
+.experience-modal__nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #F5F5DC;
+  /* Beige */
+  border: 1px solid #D4AF37;
+  /* Gold border */
+  border-radius: 50%;
+  /* Circular */
+  color: #1a1a1a;
+  /* Dark icon */
+  cursor: pointer;
+  z-index: 1003;
+  padding: 1rem;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+}
+
+.experience-modal__nav:hover {
+  background-color: #D4AF37;
+  /* Gold hover */
+  color: white;
+  transform: translateY(-50%) scale(1.1);
+}
+
+.experience-modal__wrapper {
+  width: 85%;
+  max-width: 1100px;
+  height: 70vh;
+  /* Reduced height */
+  background-color: #ffffff;
+  /* White background */
+  border-radius: 24px;
+  /* Increased radius */
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  transform-origin: center center;
+  border: 4px solid white;
+  /* Thick white border */
+}
+
+.experience-modal__content {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  /* Adjusted ratio */
+  height: 100%;
+}
+
+.experience-modal__left {
+  position: relative;
+  height: 100%;
+  background-color: #f0f0f0;
+  overflow: hidden;
+}
+
+.experience-modal__image-wrapper {
+  width: 100%;
+  height: 100%;
+}
+
+.experience-modal__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.experience-modal__right {
+  padding: 3rem;
+  color: white;
+  /* White text */
+  background-color: #000;
+  /* Black background */
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  position: relative;
+  border-left: 4px solid white;
+}
+
+.experience-modal__close {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  z-index: 10;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.1);
+  /* Subtle white bg */
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.experience-modal__close:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: rotate(90deg);
+}
+
+.experience-modal__close .hamburger-nav__toggle {
+  transform: none;
+  width: 20px;
+  height: 20px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.experience-modal__close .hamburger-nav__toggle-bar {
+  background-color: white;
+  /* White bars */
+  width: 100%;
+  height: 2px;
+  position: absolute;
+  transition: transform 0.3s ease;
+}
+
+.experience-modal__close .hamburger-nav__toggle-bar:first-child {
+  transform: rotate(45deg);
+}
+
+.experience-modal__close .hamburger-nav__toggle-bar:last-child {
+  transform: rotate(-45deg);
+}
+
+.experience-modal__title {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.1;
+  font-weight: 400;
+  color: white;
+  /* White */
+}
+
+.experience-modal__subtitle {
+  font-size: 1rem;
+  color: #ffd700;
+  /* Gold */
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+}
+
+.experience-modal__description {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.8);
+  /* Off-white */
+  margin-bottom: 2rem;
+}
+
+.experience-modal__divider {
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.1);
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.experience-modal__details p {
+  color: rgba(255, 255, 255, 0.5);
+  /* Dim white */
+  font-style: italic;
+  font-size: 0.9rem;
+}
+
+@media screen and (max-width: 991px) {
+  .experience-modal__content {
+    grid-template-columns: 1fr;
+    grid-template-rows: 40% 60%;
+  }
+
+  .experience-modal__wrapper {
+    height: 80vh;
+    width: 90%;
+  }
+
+  .experience-modal__title {
+    font-size: 2rem;
+  }
+
+  .experience-modal__right {
+    padding: 2rem;
+    border-left: none;
+    border-top: 4px solid white;
+  }
+}
+
+.experience-modal__nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  z-index: 1003;
+  padding: 1rem;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.experience-modal__nav:hover {
+  color: white;
+  transform: translateY(-50%) scale(1.2);
+}
+
+.experience-modal__nav--prev {
+  left: 2%;
+}
+
+.experience-modal__nav--next {
+  right: 2%;
+}
+
+@media screen and (max-width: 991px) {
+  .experience-modal__nav {
+    top: auto;
+    bottom: 2rem;
+    transform: none;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    padding: 0.5rem;
+    width: 48px;
+    height: 48px;
+  }
+
+  .experience-modal__nav:hover {
+    transform: scale(1.1);
+  }
+
+  .experience-modal__nav--prev {
+    left: 2rem;
+  }
+
+  .experience-modal__nav--next {
+    right: 2rem;
+  }
+
+  .experience-modal__nav svg {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+/* CTA Button */
+.experience-modal__cta {
+  background-color: #D4AF37;
+  /* Gold */
+  color: #000;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  border-radius: 4px;
+  /* Slight round */
+  transition: all 0.3s ease;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.experience-modal__cta:hover {
+  background-color: #fff;
+  color: #000;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+}
+
+/* Fix for Contact Modal Z-Index */
+.modal {
+  z-index: 2000;
+}
+
+.experience-form__hidden {
+  display: none;
+}
