@@ -972,6 +972,22 @@ svg .cookiescriptlogo,
 }
 
 @media screen and (max-width: 767px) {
+  /* Prevent parent containers from clipping */
+  .section__experience {
+    overflow-x: visible !important;
+    overflow-y: visible;
+  }
+
+  .experience__layout {
+    overflow-x: visible !important;
+    overflow-y: visible;
+  }
+
+  .experience__inner {
+    overflow-x: visible !important;
+    overflow-y: visible;
+  }
+
   .experience__cards {
     display: flex !important;
     flex-direction: row;
@@ -983,6 +999,8 @@ svg .cookiescriptlogo,
     -ms-overflow-style: none;
     gap: 1.5em;
     padding-bottom: 1em;
+    padding-left: 1.25em;
+    padding-right: 1.25em;
   }
 
   .experience__cards::-webkit-scrollbar {
@@ -996,8 +1014,19 @@ svg .cookiescriptlogo,
     max-width: 85vw;
   }
 
-  .experience__inner {
-    overflow-x: visible;
+  /* Override external CSS width conflict */
+  .experience__cards > .experience-card__wrap {
+    width: 85vw !important;
+    min-width: 85vw !important;
+    max-width: 85vw !important;
+    aspect-ratio: auto;
+    height: auto;
+  }
+
+  /* Ensure cards maintain their design but allow scrolling */
+  .experience-card {
+    /* Keep overflow: clip for rounded corners, but ensure it doesn't block scrolling */
+    position: relative;
   }
 }
 /* Reduce black overlay on hero video, restoring green hue but lighter */

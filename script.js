@@ -689,6 +689,12 @@ document.addEventListener('DOMContentLoaded', function () {
     list.addEventListener('click', function (e) {
       const card = e.target.closest('[data-experience="card"]');
       if (card) {
+        // Check if card has a link attribute - if so, navigate instead of opening modal
+        const cardLink = card.getAttribute('data-card-link');
+        if (cardLink) {
+          window.location.href = cardLink;
+          return; // Prevent modal from opening
+        }
         openModal(card);
       }
     });
