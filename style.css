@@ -970,3 +970,38 @@ svg .cookiescriptlogo,
 .experience-form__hidden {
   display: none;
 }
+
+@media screen and (max-width: 767px) {
+  .experience__cards {
+    display: flex !important;
+    flex-direction: row;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    gap: 1.5em;
+    padding-bottom: 1em;
+  }
+
+  .experience__cards::-webkit-scrollbar {
+    display: none;
+  }
+
+  .experience__cards > * {
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+    min-width: 85vw;
+    max-width: 85vw;
+  }
+
+  .experience__inner {
+    overflow-x: visible;
+  }
+}
+/* Reduce black overlay on hero video, restoring green hue but lighter */
+.cover__bg__overlay {
+    background-image: linear-gradient(180deg, rgba(1, 48, 42, 0), rgba(1, 48, 42, 0.6) 95%) !important;
+    opacity: 1; 
+}
