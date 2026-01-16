@@ -1,0 +1,367 @@
+
+  .loader {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background-color: rgba(254, 209, 65, 0.99);
+    display: grid;
+    place-content: flex-end;
+    padding-right: 2.5em;
+    padding-bottom: 2.5em;
+
+    html.has-seq-ready.fonts-loaded.is-ready & {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+  }
+  
+  .loader::before {
+  	content: "";
+    z-index: 1;
+    pointer-events: none;
+    mix-blend-mode: color-burn;
+    background-image: url(https://cdn.prod.website-files.com/686c09a33211842a0ac0183d/68b0b1e2ae528702c898a058_pattern.png);
+    background-position: 0 0;
+    background-size: 7rem 7rem;
+    position: absolute;
+    inset: 0%;
+  }
+  
+  .loader::after {
+  	content: "";
+    height: 1.25em;
+    width: 1.25em;
+    border: 0.125em solid #C24628;
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+    transition: opacity 0.25s ease;
+  }
+  
+  html.has-seq-ready .loader::after {
+  	opacity: 0;
+  }
+  
+  @keyframes rotation {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  } 
+
+
+/* ------------------------- Scaling System by Osmo [https://osmo.supply/] -------------------------  */
+
+/* Desktop */
+:root {
+  --size-unit: 16; /* body font-size in design - no px */
+  --size-container-ideal: 1440; /* screen-size in design - no px */
+  --size-container-min: 992px;
+  --size-container-max: 2560px;
+  --size-container: clamp(var(--size-container-min), 100vw, var(--size-container-max));
+  --size-font: calc(var(--size-container) / (var(--size-container-ideal) / var(--size-unit)));
+
+  /* New Color Palette */
+  --white: white;
+  --bg-pale: #FDF38A;
+  --dark-green: #C24628;
+  --bg-light: #FED141;
+  --light-green: #F1B424;
+  
+  /* Extended Palette */
+  --yellow-dark: #F1B424;
+  --yellow-medium: #FED141;
+  --yellow-light: #FDF38A;
+  --blue-dark: #0086BF;
+  --blue-medium: #4698CA;
+  --blue-light: #8DC8E8;
+  --red-dark: #C24628;
+  --red-medium: #CF6F5D;
+  --red-light: #D99089;
+  --green-dark: #93C90F;
+  --green-medium: #C0DF16;
+  --green-light: #F0E991;
+  --orange-dark: #D86018;
+  --orange-medium: #ED8B00;
+  --orange-light: #FFB549;
+}
+
+/* Tablet */
+@media screen and (max-width: 991px) {
+  :root {
+    --size-container-ideal: 640; /* screen-size in design - no px */
+    --size-container-min: 768px;
+    --size-container-max: 991px;
+  }
+}
+
+/* Mobile Landscape */
+@media screen and (max-width: 767px) {
+  :root {
+    --size-container-ideal: 550;
+    --size-container-min: 480px;
+    --size-container-max: 767px;
+  }
+}
+
+/* Mobile Portrait */
+@media screen and (max-width: 479px) {
+  :root {
+    --size-container-ideal: 390;
+    --size-container-min: 320px;
+    --size-container-max: 479px;
+  }
+}
+
+body {
+  font-size: var(--size-font);
+}
+
+.container {
+  max-width: var(--size-container);
+}
+
+.container.medium {
+  max-width: calc(var(--size-container) * 0.85);
+}
+
+.container.small {
+  max-width: calc(var(--size-container) * 0.7);
+}
+
+.benefit-table-item {
+  display: grid;
+  grid-template-columns: 3fr 1fr 1fr;
+  align-items: center;
+  width: 100%;
+}
+
+.benefit-table-item .benefit-item-title {
+  grid-column: 1;
+}
+
+.benefit-table-item .benefit-checker-inner {
+  grid-column: 2 / 4;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1em;
+  justify-items: center;
+}
+
+.benefit-table-item .benefit-item-check,
+.benefit-table-item .benefit-item-x {
+  width: 100%;
+  justify-content: center;
+}
+
+/* ====================== NEW COLOR SCHEME OVERRIDES ====================== */
+
+/* Body and Main Backgrounds */
+.body {
+  background-color: var(--bg-pale) !important;
+}
+
+/* Hero Section */
+.hero-section,
+.stage {
+  background-color: var(--bg-light) !important;
+}
+
+/* Text Colors */
+h1, h2, h3, .hero-heading, .insider-heading, .benefit-heading, 
+.footer-heading, .heading, .insider-subheading, .testimonial-heading,
+.stage-fact-number, .stage-fact-unit, .stage-fact-text,
+.fact-number, .fact-unit, .fact-title,
+.benefit-item-title, .benefit-table-title,
+.footer-info-text, .footer-bottom-text, .footer-credits-text,
+.shipping-link, .credits-link, .rating-text,
+.paragraph, .flavour-title, .flavour-subline, .flavour-paragraph,
+.flavour-content-slider-title {
+  color: var(--dark-green) !important;
+}
+
+/* White text elements */
+.hero-heading .white-span,
+.big-heading, .testimonial-big-heading,
+.footer-product-heading, .statement-heading,
+.button-text,
+.testimonial-item-heading, .testimonial-item-text,
+.testimonial-client-name {
+  color: var(--white) !important;
+}
+
+/* Navbar text - black */
+.nav-link,
+.nav-link .nav-text,
+.navbar .button-bg,
+.navbar .button-text {
+  color: #000000 !important;
+}
+
+/* Light accent color */
+.light-green-span,
+.flavour-content-slider-subline {
+  color: var(--orange-medium) !important;
+}
+
+/* Buttons */
+.button-bg {
+  background-color: var(--dark-green) !important;
+}
+
+.button-bg.white-bg {
+  background-color: var(--bg-pale) !important;
+}
+
+.button-bg.light-bg {
+  background-color: var(--white) !important;
+}
+
+.button-cycle-bg {
+  background-color: var(--dark-green) !important;
+}
+
+.button-cycle-bg.white-bg {
+  background-color: var(--bg-pale) !important;
+}
+
+.button-cycle-bg.light-bg {
+  background-color: var(--white) !important;
+}
+
+/* Nav elements */
+.nav-text {
+  background-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+.social-media-circle {
+  background-color: var(--bg-pale) !important;
+}
+
+.social-media-circle.is-white {
+  background-color: var(--white) !important;
+}
+
+/* Insider Section */
+.insider-section {
+  background-color: var(--bg-pale) !important;
+}
+
+/* Benefit Section */
+.benefit-section {
+  background-color: var(--white) !important;
+}
+
+.benefit-item-check {
+  background-color: var(--bg-pale) !important;
+}
+
+/* Testimonial Section */
+.testimonial-section {
+  background-color: var(--orange-dark) !important;
+}
+
+.testimonial-slider-item {
+  border-color: var(--white) !important;
+}
+
+.testimonial-slider-item.active,
+.testimonial-slider-item-wrap.is-active .testimonial-slider-item {
+  background-color: var(--white) !important;
+  color: var(--dark-green) !important;
+}
+
+.testimonial-slider-button {
+  background-color: var(--white) !important;
+}
+
+/* Stage/Hero Facts */
+.stage-fact,
+.fact-cycle {
+  background-color: var(--bg-pale) !important;
+  border-color: var(--bg-light) !important;
+}
+
+/* Statement Cards */
+.statement-card-wrapper {
+  background-color: var(--bg-light) !important;
+}
+
+/* Payment Section */
+.payment-method-item {
+  background-color: var(--white) !important;
+}
+
+/* Footer */
+.footer-info {
+  background-color: var(--white) !important;
+  border-color: var(--bg-pale) !important;
+}
+
+.footer-credits-inner {
+  background-color: var(--white) !important;
+}
+
+/* Lines and Dividers */
+.sub-line,
+.line {
+  background-color: var(--dark-green) !important;
+}
+
+.line.white,
+.testimonial-line.white {
+  background-color: var(--white) !important;
+}
+
+/* Testimonial Inner Cards */
+.testimonial-inner {
+  background-color: var(--white) !important;
+}
+
+.testimonial-text {
+  color: var(--dark-green) !important;
+}
+
+/* Flavour Section */
+.flavour {
+  background-color: var(--bg-pale) !important;
+  color: var(--dark-green) !important;
+}
+
+.flavour-slider-button {
+  background-color: var(--white) !important;
+}
+
+/* Sequence Section */
+.sequence-title {
+  color: var(--dark-green) !important;
+}
+
+/* Rating Stars */
+.rating-star-wrap svg,
+.testimonial-star-wrap svg {
+  fill: var(--yellow-dark) !important;
+}
+
+/* Marquee Text */
+.marquee-text-svg text {
+  fill: var(--bg-light) !important;
+}
+
+/* Selection Color */
+::selection {
+  color: var(--bg-pale) !important;
+  background: var(--dark-green) !important;
+}
+
+::-moz-selection {
+  color: var(--bg-pale) !important;
+  background: var(--dark-green) !important;
+}
