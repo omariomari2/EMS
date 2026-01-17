@@ -9,18 +9,6 @@ const imageUrls = [
     "https://ik.imagekit.io/dr5fryhth/go-shopping/images/products/herbs.png"
 ];
 
-const size = 1000;
-
-const CONFIG = {
-    bounceDuration: 4000,
-    morphDuration: 1000,
-    baseX: size / 2,
-    baseY: size / 2,
-    bounceHeight: 30,
-    imageSize: size,
-    loadDelay: 4500 // Delay in ms before canvas starts
-};
-
 // Easing functions
 const easeInOutElastic = (x) => {
     const c5 = (2 * Math.PI) / 4.5;
@@ -35,6 +23,7 @@ const easeInOutElastic = (x) => {
 
 export default function HeroCanvas() {
     const canvasRef = useRef(null);
+    const containerRef = useRef(null);
     const [isReady, setIsReady] = useState(false);
     const animationFrameRef = useRef(null);
 
@@ -42,11 +31,28 @@ export default function HeroCanvas() {
         // Delay canvas initialization to let other hero components load first
         const delayTimer = setTimeout(() => {
             const canvas = canvasRef.current;
-            if (!canvas) return;
+            const container = containerRef.current;
+            if (!canvas || !container) return;
 
-            const ctx = canvas.getContext('2d');
+            // Get container size for responsive canvas
+            const containerWidth = container.clientWidth || 500;
+            const containerHeight = container.clientHeight || 500;
+            const size = Math.max(containerWidth, containerHeight, 400);
+
+            // Set canvas size
             canvas.width = size;
             canvas.height = size;
+
+            const CONFIG = {
+                bounceDuration: 4000,
+                morphDuration: 1000,
+                baseX: size / 2,
+                baseY: size / 2,
+                bounceHeight: 30,
+                imageSize: size * 1.2 // Make images larger on smaller screens
+            };
+
+            const ctx = canvas.getContext('2d');
 
             const images = [];
             let loadedCount = 0;
@@ -176,7 +182,7 @@ export default function HeroCanvas() {
                 };
                 images[index] = img;
             });
-        }, CONFIG.loadDelay);
+        }, 2500);
 
         return () => {
             clearTimeout(delayTimer);
@@ -187,17 +193,33 @@ export default function HeroCanvas() {
     }, []);
 
     return (
-        <canvas
-            ref={canvasRef}
+        <div
+            ref={containerRef}
             style={{
                 width: '100%',
                 height: '100%',
-                borderRadius: '12px',
-                objectFit: 'contain',
-                opacity: isReady ? 1 : 0,
-                transition: 'opacity 0.5s ease-in-out',
-                marginTop: '-90px'
+                minHeight: '400px',
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                overflow: 'visible'
             }}
-        />
+        >
+            <canvas
+                ref={canvasRef}
+                style={{
+                    width: '130%',
+                    height: '130%',
+                    minWidth: '380px',
+                    minHeight: '380px',
+                    borderRadius: '12px',
+                    objectFit: 'contain',
+                    transform: isReady ? 'translateY(0)' : 'translateY(150px)',
+                    opacity: isReady ? 1 : 0,
+                    transition: 'transform 0.6s ease-out, opacity 0.4s ease-out',
+                    marginTop: '-90px'
+                }}
+            />
+        </div>
     );
 }

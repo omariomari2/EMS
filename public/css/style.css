@@ -197,6 +197,15 @@ h1, h2, h3, .hero-heading, .insider-heading, .benefit-heading,
   color: var(--white) !important;
 }
 
+/* Navbar fixed overlay */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
 /* Navbar text - black */
 .nav-link,
 .nav-link .nav-text,
@@ -239,6 +248,23 @@ h1, h2, h3, .hero-heading, .insider-heading, .benefit-heading,
 /* Nav elements */
 .nav-text {
   background-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+.league-script-regular {
+  font-family: "League Script", cursive;
+  font-weight: 800;
+  font-style: normal;
+}
+
+.stage-deco-text {
+  max-width: none;
+  width: auto;
+  word-spacing: 0.1em;
+  letter-spacing: 0.02em;
+}
+
+.stage-deco-text .dynamic-location {
+  font-weight: bold;
 }
 
 .social-media-circle {

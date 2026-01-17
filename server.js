@@ -42,7 +42,7 @@ app.get('/', (req, res) => {
   <script type="text/javascript">
     WebFont.load({
       google: {
-        families: ["Barlow Condensed:400,500,600,700"]
+        families: ["Barlow Condensed:400,500,600,700", "League Script:400"]
       }
     });
   </script>

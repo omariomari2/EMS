@@ -1,17 +1,53 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import HeroCanvas from './HeroCanvas';
+import bestJson from '../assets/best.json';
 
 export default function Hero() {
   const [showMarquee, setShowMarquee] = useState(false);
+  const [locationIndex, setLocationIndex] = useState(0);
+  const lottiePlayerRef = useRef(null);
+
+  const locationPhrases = [
+    'to your home',
+    'to his house',
+    'to her school',
+    'to the office',
+    'to everywhere'
+  ];
 
   useEffect(() => {
-    // Delay marquee loading to let other hero components load first
     const timer = setTimeout(() => {
       setShowMarquee(true);
-    }, 3000); // 3 second delay
+    }, 3000);
 
     return () => clearTimeout(timer);
   }, []);
+
+  useEffect(() => {
+    let url = null;
+    
+    const player = lottiePlayerRef.current;
+    if (player && bestJson) {
+      const jsonString = JSON.stringify(bestJson);
+      const blob = new Blob([jsonString], { type: 'application/json' });
+      url = URL.createObjectURL(blob);
+      player.src = url;
+    }
+    
+    return () => {
+      if (url) {
+        URL.revokeObjectURL(url);
+      }
+    };
+  }, []);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setLocationIndex((prevIndex) => (prevIndex + 1) % locationPhrases.length);
+    }, 4000);
+
+    return () => clearInterval(interval);
+  }, [locationPhrases.length]);
 
   return (
     <section data-load-stage data-inertia className="stage">
@@ -20,7 +56,7 @@ export default function Hero() {
         <div className="stage-inner">
           <div className="stage-content">
             <div className="stage-logo">
-              <lottie-player src="https://cdn.prod.website-files.com/686c09a33211842a0ac0183d/68bf4595ca06155170fa0b3f_fee5b51503049a55da64bfd6a8ed744f_more-logo-animation.json" background="transparent" speed="1" data-load-stage-logo-lottie data-load-stage-logo className="stage-logo-svg"></lottie-player>
+              <lottie-player ref={(el) => { lottiePlayerRef.current = el; }} background="transparent" speed="1" data-load-stage-logo-lottie data-load-stage-logo className="stage-logo-svg"></lottie-player>
             </div>
             <div data-load-stage-cta className="stage-cta">
               <a href="https://morenutrition.co.uk/products/more-protein-iced-matcha-latte?country=GB&shpxid=9a9ac546-be7d-41d1-b2d0-0e58e2adcb2d" target="_blank" rel="noopener noreferrer" className="button w-inline-block">
@@ -45,8 +81,8 @@ export default function Hero() {
               <div className="stage-left">
                 <div className="stage-deco">
                   <div data-load-stage-deco-text style={{ '--animation-delay': '.05s' }} className="stage-deco-text-wrap">
-                    <img src="https://cdn.prod.website-files.com/686c09a33211842a0ac0183d/68d41a7021c95a7f4ce8cd14_4bb0c9727f3cc3cf72d4fe155fa50163_Real%20Matcha%2C%20Origin%20al%20Taste.svg" loading="lazy" width="300" height="112" alt="Real Matcha, Origin al Taste" className="stage-deco-text" />
-                    <img src="https://cdn.prod.website-files.com/686c09a33211842a0ac0183d/68d41a7021c95a7f4ce8cd14_4bb0c9727f3cc3cf72d4fe155fa50163_Real%20Matcha%2C%20Origin%20al%20Taste.svg" loading="eager" width="300" height="112" alt="Real Matcha, Origin al Taste" className="stage-deco-text is-wiggle" />
+                    <div className="stage-deco-text league-script-regular">Get all your foodstuffs <span className="dynamic-location">{locationPhrases[locationIndex]}</span></div>
+                    <div className="stage-deco-text is-wiggle league-script-regular">Get all your foodstuffs <span className="dynamic-location">{locationPhrases[locationIndex]}</span></div>
                   </div>
                   <div data-load-stage-deco-arrow style={{ '--animation-delay': '.15s' }} className="stage-deco-arrow-wrap">
                     <img src="https://cdn.prod.website-files.com/686c09a33211842a0ac0183d/68a9a089d73e5cf84d4ded67_stage-sketch-arrow.svg" loading="eager" width="150" height="150" alt="stage-sketch-arrow" className="stage-deco-arrow" />
@@ -98,11 +134,11 @@ export default function Hero() {
               <div className="stage-right">
                 <div className="stage-text-wrap">
                   <h1 data-load-stage-title className="hero-heading">
-                    <span className="white-span">Matcha</span>
+                    <span className="white-span">Buy.</span>
                     <br />
-                    meets
+                    Receive.
                     <br />
-                    Protein
+                    Enjoy.
                   </h1>
                   <div className="stage-paragraph-wrap">
                     <p data-load-stage-text className="paragraph is-stage-paragraph">Our More Protein Iced Matcha Latte blends matcha with protein and glucomannan, a natural fiber that supports weight loss.</p>
