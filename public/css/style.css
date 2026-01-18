@@ -1,68 +1,70 @@
+.loader {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  background-color: rgba(254, 209, 65, 0.99);
+  display: grid;
+  place-content: flex-end;
+  padding-right: 2.5em;
+  padding-bottom: 2.5em;
 
-  .loader {
-    position: fixed;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 9999;
-    background-color: rgba(254, 209, 65, 0.99);
-    display: grid;
-    place-content: flex-end;
-    padding-right: 2.5em;
-    padding-bottom: 2.5em;
-
-    html.has-seq-ready.fonts-loaded.is-ready & {
-      opacity: 0;
-      visibility: hidden;
-      pointer-events: none;
-    }
-  }
-  
-  .loader::before {
-  	content: "";
-    z-index: 1;
+  html.has-seq-ready.fonts-loaded.is-ready & {
+    opacity: 0;
+    visibility: hidden;
     pointer-events: none;
-    mix-blend-mode: color-burn;
-    background-image: url(https://cdn.prod.website-files.com/686c09a33211842a0ac0183d/68b0b1e2ae528702c898a058_pattern.png);
-    background-position: 0 0;
-    background-size: 7rem 7rem;
-    position: absolute;
-    inset: 0%;
   }
-  
-  .loader::after {
-  	content: "";
-    height: 1.25em;
-    width: 1.25em;
-    border: 0.125em solid #C24628;
-    border-bottom-color: transparent;
-    border-radius: 50%;
-    display: inline-block;
-    box-sizing: border-box;
-    animation: rotation 1s linear infinite;
-    transition: opacity 0.25s ease;
+}
+
+.loader::before {
+  content: "";
+  z-index: 1;
+  pointer-events: none;
+  mix-blend-mode: color-burn;
+  background-image: url(https://cdn.prod.website-files.com/686c09a33211842a0ac0183d/68b0b1e2ae528702c898a058_pattern.png);
+  background-position: 0 0;
+  background-size: 7rem 7rem;
+  position: absolute;
+  inset: 0%;
+}
+
+.loader::after {
+  content: "";
+  height: 1.25em;
+  width: 1.25em;
+  border: 0.125em solid #C24628;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+  transition: opacity 0.25s ease;
+}
+
+html.has-seq-ready .loader::after {
+  opacity: 0;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
   }
-  
-  html.has-seq-ready .loader::after {
-  	opacity: 0;
+
+  100% {
+    transform: rotate(360deg);
   }
-  
-  @keyframes rotation {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
-  } 
+}
 
 
 /* ------------------------- Scaling System by Osmo [https://osmo.supply/] -------------------------  */
 
 /* Desktop */
 :root {
-  --size-unit: 16; /* body font-size in design - no px */
-  --size-container-ideal: 1440; /* screen-size in design - no px */
+  --size-unit: 16;
+  /* body font-size in design - no px */
+  --size-container-ideal: 1440;
+  /* screen-size in design - no px */
   --size-container-min: 992px;
   --size-container-max: 2560px;
   --size-container: clamp(var(--size-container-min), 100vw, var(--size-container-max));
@@ -74,7 +76,7 @@
   --dark-green: #C24628;
   --bg-light: #FED141;
   --light-green: #F1B424;
-  
+
   /* Extended Palette */
   --yellow-dark: #F1B424;
   --yellow-medium: #FED141;
@@ -96,7 +98,8 @@
 /* Tablet */
 @media screen and (max-width: 991px) {
   :root {
-    --size-container-ideal: 640; /* screen-size in design - no px */
+    --size-container-ideal: 640;
+    /* screen-size in design - no px */
     --size-container-min: 768px;
     --size-container-max: 991px;
   }
@@ -175,24 +178,47 @@ body {
 }
 
 /* Text Colors */
-h1, h2, h3, .hero-heading, .insider-heading, .benefit-heading, 
-.footer-heading, .heading, .insider-subheading, .testimonial-heading,
-.stage-fact-number, .stage-fact-unit, .stage-fact-text,
-.fact-number, .fact-unit, .fact-title,
-.benefit-item-title, .benefit-table-title,
-.footer-info-text, .footer-bottom-text, .footer-credits-text,
-.shipping-link, .credits-link, .rating-text,
-.paragraph, .flavour-title, .flavour-subline, .flavour-paragraph,
+h1,
+h2,
+h3,
+.hero-heading,
+.insider-heading,
+.benefit-heading,
+.footer-heading,
+.heading,
+.insider-subheading,
+.testimonial-heading,
+.stage-fact-number,
+.stage-fact-unit,
+.stage-fact-text,
+.fact-number,
+.fact-unit,
+.fact-title,
+.benefit-item-title,
+.benefit-table-title,
+.footer-info-text,
+.footer-bottom-text,
+.footer-credits-text,
+.shipping-link,
+.credits-link,
+.rating-text,
+.paragraph,
+.flavour-title,
+.flavour-subline,
+.flavour-paragraph,
 .flavour-content-slider-title {
   color: var(--dark-green) !important;
 }
 
 /* White text elements */
 .hero-heading .white-span,
-.big-heading, .testimonial-big-heading,
-.footer-product-heading, .statement-heading,
+.big-heading,
+.testimonial-big-heading,
+.footer-product-heading,
+.statement-heading,
 .button-text,
-.testimonial-item-heading, .testimonial-item-text,
+.testimonial-item-heading,
+.testimonial-item-text,
 .testimonial-client-name {
   color: var(--white) !important;
 }
@@ -254,14 +280,15 @@ h1, h2, h3, .hero-heading, .insider-heading, .benefit-heading,
   font-family: "League Script", cursive;
   font-weight: 800;
   font-style: normal;
+  font-size: large;
 }
 
-.stage-deco-text {
+/* .stage-deco-text {
   max-width: none;
   width: auto;
   word-spacing: 0.1em;
   letter-spacing: 0.02em;
-}
+} */
 
 .stage-deco-text .dynamic-location {
   font-weight: bold;
@@ -349,6 +376,19 @@ h1, h2, h3, .hero-heading, .insider-heading, .benefit-heading,
 /* Testimonial Inner Cards */
 .testimonial-inner {
   background-color: var(--white) !important;
+}
+
+.testimonial-media.w-embed {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.testimonial-media.w-embed video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .testimonial-text {

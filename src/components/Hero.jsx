@@ -25,7 +25,7 @@ export default function Hero() {
 
   useEffect(() => {
     let url = null;
-    
+
     const player = lottiePlayerRef.current;
     if (player && bestJson) {
       const jsonString = JSON.stringify(bestJson);
@@ -33,7 +33,7 @@ export default function Hero() {
       url = URL.createObjectURL(blob);
       player.src = url;
     }
-    
+
     return () => {
       if (url) {
         URL.revokeObjectURL(url);
@@ -141,7 +141,7 @@ export default function Hero() {
                     Enjoy.
                   </h1>
                   <div className="stage-paragraph-wrap">
-                    <p data-load-stage-text className="paragraph is-stage-paragraph">Our More Protein Iced Matcha Latte blends matcha with protein and glucomannan, a natural fiber that supports weight loss.</p>
+                    <p data-load-stage-text className="paragraph is-stage-paragraph">Shop from your favorite markets and get your foodstuff delivered anywhere—fast, easy, and hassle‑free</p>
                     <div data-load-stage-underline style={{ '--animation-delay': '.2s' }} className="stage-subline-wrap">
                       <img src="https://cdn.prod.website-files.com/686c09a33211842a0ac0183d/688655fd2fed5f707c038914_Layer_1%20(3).svg" loading="eager" width="152" height="42" alt="Underline" className="subline-img" />
                       <img src="https://cdn.prod.website-files.com/686c09a33211842a0ac0183d/688655fd2fed5f707c038914_Layer_1%20(3).svg" loading="eager" width="152" height="42" alt="Underline" className="subline-img is-wiggle" />
@@ -168,7 +168,7 @@ export default function Hero() {
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 1440 293" width="100%" style={{ overflow: 'visible' }} data-marquee-svg className="marquee-text-svg">
             <path d="M-68 300C173 173 515.5 1 937.2 1 1254.5 1 1468 183.3 1543 246.9" id="curve"></path>
             <text width="100%" style={{ transform: 'translate3d(0,0,0)' }}>
-              <textPath style={{ transform: 'translate3d(0,0,0)' }} alignmentBaseline="top" href="#curve">It´s a Match(a) · It´s a Match(a) · It´s a Match(a)</textPath>
+              <textPath style={{ transform: 'translate3d(0,0,0)' }} alignmentBaseline="top" href="#curve">Go Easy · Go Smooth · Go Stress-Free · Go-Shop</textPath>
             </text>
           </svg>
           <div className="marquee-overlay"></div>

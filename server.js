@@ -18,7 +18,7 @@ app.use(express.static(path.join(rootDir, 'public')));
 
 app.get('/', (req, res) => {
   const appHtml = renderToString(React.createElement(App));
-  
+
   const html = `<!DOCTYPE html>
 <html data-wf-page="686c09a33211842a0ac0183d" data-wf-site="686c09a33211842a0ac0183d" lang="en">
 <head>
@@ -36,6 +36,7 @@ app.get('/', (req, res) => {
   <link href="/css/style-686c09a33211842a0ac0183d.css" rel="stylesheet" type="text/css" />
   <link href="/css/style-styles.css" rel="stylesheet" type="text/css" />
   <link href="/css/style.css" rel="stylesheet" type="text/css" />
+  <link href="/css/sections.css" rel="stylesheet" type="text/css" />
   <link href="https://fonts.googleapis.com" rel="preconnect" />
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous" />
   <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script>

@@ -2,6 +2,7 @@ import Loader from './components/Loader.jsx';
 import Navbar from './components/Navbar.jsx';
 import Hero from './components/Hero.jsx';
 import Insider from './components/Insider.jsx';
+import Protein from './components/Protein.jsx';
 import Sequence from './components/Sequence.jsx';
 import Benefits from './components/Benefits.jsx';
 import Reviews from './components/Reviews.jsx';
@@ -17,6 +18,7 @@ export default function App() {
         <Navbar />
         <Hero />
         <Insider />
+        <Protein />
         <Sequence />
         <Benefits />
         <Reviews />

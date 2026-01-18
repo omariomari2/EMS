@@ -16,7 +16,7 @@ export default function Insider() {
                 <div data-inertia-item-child className="testimonial-inner _1">
                   <div className="testimonial-media w-embed">
                     <video playsInline loop muted disablePictureInPicture disableRemotePlayback preload="metadata" data-wf-ignore="true" data-object-fit="cover" data-video>
-                      <source src="https://www.dl.dropboxusercontent.com/scl/fi/sn5g0ke38hntd7qchzhn3/SnapInsta.to_AQO-6-wc7kGZhVWDEZdicSozaqoIGuwQNnyqUly6BQNAyHcK97qvkSA6nEpLa8FL7KCmUoUDdz_a4LW2v49v8UhQxv0XijkRGobU6Io.mp4?rlkey=tip5d5fx1nr0sbeegogs83i3a&st=xphiyn1m&dl=0" data-wf-ignore="true" />
+                      <source src="https://goshop-images.lon1.cdn.digitaloceanspaces.com/newui/usevideo%20(1)%20(1)%20(1).mp4" data-wf-ignore="true" />
                     </video>
                   </div>
                   <button type="button" data-video-button aria-label="Sound on/off" className="testimonial-sound-btn is-top">
@@ -33,7 +33,7 @@ export default function Insider() {
                 <div data-inertia-item-child className="testimonial-inner _2">
                   <div className="testimonial-media w-embed">
                     <video playsInline loop muted disablePictureInPicture disableRemotePlayback preload="metadata" data-wf-ignore="true" data-object-fit="cover" data-video>
-                      <source src="https://www.dl.dropboxusercontent.com/scl/fi/vzjyqfr7i098s1e4f35fx/SnapInsta.to_AQN4zwHLLGQzUTUU7rkiWCayhvMlcD579UzW7eIdHgcwvbEXgqqX8JMZkSiqALpLD_bigNDJwwg7Geal33Ocpjl7VEbT4P2VvF-qIzo.mp4?rlkey=13n2hsdztyjfay5542poch07u&st=di2y9e7y&dl=0" data-wf-ignore="true" />
+                      <source src="https://goshop-images.lon1.cdn.digitaloceanspaces.com/newui/Gradient%20Text%20_%20Countdown.mp4" data-wf-ignore="true" />
                     </video>
                   </div>
                   <button type="button" data-video-button aria-label="Sound on/off" className="testimonial-sound-btn">
@@ -50,7 +50,7 @@ export default function Insider() {
                 <div data-inertia-item-child className="testimonial-inner _3">
                   <div className="testimonial-media w-embed">
                     <video playsInline loop muted disablePictureInPicture disableRemotePlayback preload="metadata" data-wf-ignore="true" data-object-fit="cover" data-video>
-                      <source src="https://www.dl.dropboxusercontent.com/scl/fi/ccn1egi3ikhsytqhbfwsf/SnapInsta.to_AQMqh_lTfkPamg2Oj4zR5IUuybxe2H0drgz6Q3qUpgoxPo_ITsqHGGRXaA0tU8cn22XVNo6eJ6_jLGfS0eVkEWLwpgjarC1GYIj9qMI.mp4?rlkey=o6zx1vqe0g584o8pwb12e8ju3&st=yfiuwnbo&dl=0" data-wf-ignore="true" />
+                      <source src="https://goshop-images.lon1.cdn.digitaloceanspaces.com/newui/iNotifications-Stack%20(1).mp4" data-wf-ignore="true" />
                     </video>
                   </div>
                   <button type="button" data-video-button aria-label="Sound on/off" className="testimonial-sound-btn">
@@ -65,8 +65,8 @@ export default function Insider() {
               </div>
             </div>
             <div id="w-node-_1ac78251-f73b-1f50-5984-75b855ef30eb-0ac01850" className="insider-text-inner">
-              <h3 className="insider-subheading">We want to make healthy, science-backed nutrition simple and accessible - so you can feel better, perform better, and enjoy life every single day.</h3>
-              <p className="paragraph">Loved by thousands of community members, this creation contains real green tea powder, premium protein, and glucomannan. Irresistibly delicious. Heavenly creamy.</p>
+              <h3 className="insider-subheading">We want to make fresh, market quality nutrition simple and accessible so you can feel better, perform better, and enjoy life every single day.</h3>
+              <p className="paragraph">Go Shop provides real products, fresh  foodstuff, and quality staples from your favorite narkets and vendors. Our mission is to connect you with the best markets in town without any hassle.</p>
               <div className="insider-cta">
                 <a href="https://morenutrition.co.uk/products/more-protein-iced-matcha-latte?country=GB&shpxid=9a9ac546-be7d-41d1-b2d0-0e58e2adcb2d" target="_blank" rel="noopener noreferrer" className="button w-inline-block">
                   <div className="button-cycle is-first">
@@ -86,7 +86,7 @@ export default function Insider() {
                   </div>
                 </a>
                 <div className="rating-inner">
-                  <a href="https://morenutrition.co.uk/products/more-protein-iced-matcha-latte?country=GB&shpxid=9a9ac546-be7d-41d1-b2d0-0e58e2adcb2d" target="_blank" rel="noopener noreferrer" className="rating-link w-inline-block">
+                  <a className="rating-link w-inline-block">
                     <div className="rating-star-wrap">
                       <img src="https://cdn.prod.website-files.com/686c09a33211842a0ac0183d/68ae178a6c618dbc4bb25c48_icon-star.svg" loading="lazy" width="20" height="20" alt="icon-star" className="rating-star" />
                       <img src="https://cdn.prod.website-files.com/686c09a33211842a0ac0183d/68ae178a6c618dbc4bb25c48_icon-star.svg" loading="lazy" width="20" height="20" alt="icon-star" className="rating-star" />
@@ -95,7 +95,7 @@ export default function Insider() {
                       <img src="https://cdn.prod.website-files.com/686c09a33211842a0ac0183d/68ae178a30a512b269607fbe_icon-star-half.svg" loading="lazy" width="20" height="20" alt="icon-star" className="rating-star" />
                     </div>
                     <div className="rating-text-wrap">
-                      <div className="rating-text">3158 Reviews</div>
+                      <div className="rating-text">100+ Reviews</div>
                     </div>
                   </a>
                 </div>
