@@ -22,8 +22,7 @@ export default function Benefits() {
             <div data-benefit-table className="benefit-table">
               <div id="w-node-_244ca70f-4fb8-4324-7d1f-6e5cebd97f1e-0ac01850" className="benefit-table-title-wrapper">
                 <div id="w-node-da33aad3-e9be-fd6f-a8b0-79237ed37994-0ac01850" className="benefit-table-title">Benefits</div>
-                <img src="https://cdn.prod.website-files.com/686c09a33211842a0ac0183d/687ea845b6162b993ddd0020_Group%201%20(1).svg" loading="lazy" id="w-node-d5a0031d-8b6e-5d4a-5e75-e26d1c40acd5-0ac01850" alt="More Nutrition Logo" className="benefit-table-title-img is-desktop" />
-                <img src="https://cdn.prod.website-files.com/686c09a33211842a0ac0183d/68c282d511f17f7c0e481521_more-m-logo.svg" loading="lazy" width="181" height="150" alt="more-m-logo" id="w-node-_2d859f91-413d-fec0-5be3-c31abf68249b-0ac01850" className="benefit-table-title-img is-mobile" />
+                <div id="w-node-d5a0031d-8b6e-5d4a-5e75-e26d1c40acd5-0ac01850" className="benefit-table-title">GoShopGhana</div>
                 <div id="w-node-_78d70ec8-c380-1f74-9296-fa312e5af0f4-0ac01850" className="benefit-table-title">Regular Matcha</div>
               </div>
               <div data-benefit-table-line id="w-node-dabaf014-7b8f-d5cf-7507-3b9733e65ad8-0ac01850" className="sub-line"></div>
