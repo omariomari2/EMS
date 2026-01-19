@@ -19,9 +19,6 @@ export default function Reviews() {
       <div className="testimonial-container">
         <div className="grid-layout">
           <div id="w-node-_188a35c2-2913-dd29-6c54-5bf8cbbe64f3-0ac01850" className="big-title-wrapper">
-            <div className="testimonial-signature">
-              <img src="https://cdn.prod.website-files.com/686c09a33211842a0ac0183d/68b2e8120f5b95bfbd87aebf_testimonial-signature.svg" loading="lazy" width="300" height="27" alt="testimonial-signature" className="testimonial-signature-img" />
-            </div>
             <h2 className="testimonial-big-heading">
               Go Easy. Go Safe.
               <br />

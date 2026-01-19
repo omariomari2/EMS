@@ -2,7 +2,7 @@ export default function Benefits() {
   return (
     <div id="benefits" className="benefit-section">
       <div data-smiley className="top-smiley is-benefit">
-        <img src="https://ik.imagekit.io/dr5fryhth/go-shopping/images/cropped_tom" loading="lazy" alt="Smiley" />
+        <img src="https://ik.imagekit.io/dr5fryhth/spintom" loading="lazy" alt="Smiley" />
       </div>
       <div className="container smaller">
         <div className="grid-layout">

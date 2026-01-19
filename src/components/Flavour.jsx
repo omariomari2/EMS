@@ -3,19 +3,19 @@ import FlavourContentSlide from './FlavourContentSlide.jsx';
 
 export default function Flavour() {
   const slides = [
-    { doseImg: 'https://cdn.prod.website-files.com/686c09a33211842a0ac0183d/68c958d0422452a42640ce1a_slider-flavour-strawberry-dose.webp', packImg: 'https://cdn.prod.website-files.com/686c09a33211842a0ac0183d/68c958d08fd58d9f97c0a559_slider-flavour-strawberry-pack.webp', alt: 'strawberry' },
-    { doseImg: 'https://cdn.prod.website-files.com/686c09a33211842a0ac0183d/68c9bd8833449d96f96a8b2f_slider-flavour-fudge-brownie-dose.webp', packImg: 'https://cdn.prod.website-files.com/686c09a33211842a0ac0183d/68c9bd899ab270ca74992378_slider-flavour-fudge-brownie-pack.webp', alt: 'fudge-brownie' },
-    { doseImg: 'https://cdn.prod.website-files.com/686c09a33211842a0ac0183d/68c9bd89c0ba63f9f1a0474f_slider-flavour-vanilla-choc-chip-dose.webp', packImg: 'https://cdn.prod.website-files.com/686c09a33211842a0ac0183d/68c9bd8966162a74314fbec6_slider-flavour-vanilla-choc-chip-pack.webp', alt: 'vanilla-choc-chip' },
-    { doseImg: 'https://cdn.prod.website-files.com/686c09a33211842a0ac0183d/68c9be3296b7aa51aad8dd5d_slider-flavour-salted-caramel-dose.webp', packImg: 'https://cdn.prod.website-files.com/686c09a33211842a0ac0183d/68c9bd886d19ccf79464c844_slider-flavour-salted-caramel-pack.webp', alt: 'salted-caramel' },
-    { doseImg: 'https://cdn.prod.website-files.com/686c09a33211842a0ac0183d/68c9bd88dfdd73be537ddc99_slider-flavour-vanilla-perfection-dose.webp', packImg: 'https://cdn.prod.website-files.com/686c09a33211842a0ac0183d/68c9bd88efee0e997f4efce6_slider-flavour-vanilla-perfection-pack.webp', alt: 'vanilla-perfection' }
+    { doseImg: 'https://ik.imagekit.io/dr5fryhth/go-shopping/images/slider/mato.png', packImg: 'https://ik.imagekit.io/dr5fryhth/go-shopping/images/slider/onn.png', secondPackImg: 'https://ik.imagekit.io/dr5fryhth/go-shopping/images/slider/plenty.png', alt: 'strawberry' },
+    { doseImg: 'https://ik.imagekit.io/dr5fryhth/go-shopping/images/slider/milo.png', packImg: 'https://ik.imagekit.io/dr5fryhth/go-shopping/images/products/kivo.png?updatedAt=1768590898030', secondPackImg: 'https://ik.imagekit.io/dr5fryhth/go-shopping/images/slider/ndc.png', alt: 'provisions' },
+    { doseImg: 'https://ik.imagekit.io/dr5fryhth/go-shopping/images/roti.png?updatedAt=1768808598933', packImg: 'https://ik.imagekit.io/dr5fryhth/go-shopping/images/slider/thigh.png?updatedAt=1768819424108', secondPackImg: 'https://ik.imagekit.io/dr5fryhth/go-shopping/images/perfecr.png?updatedAt=1768810765886', alt: 'good-meat' },
+    { doseImg: 'https://ik.imagekit.io/dr5fryhth/pearshaped', packImg: 'https://ik.imagekit.io/dr5fryhth/go-shopping/images/products/banana.png?updatedAt=1768542984405', secondPackImg: 'https://ik.imagekit.io/dr5fryhth/go-shopping/images/products/cuttt.png?updatedAt=1768590905797', alt: 'tasty-fruits' },
+    { doseImg: 'https://ik.imagekit.io/dr5fryhth/optisimon', packImg: 'https://ik.imagekit.io/dr5fryhth/optinoo', secondPackImg: 'https://ik.imagekit.io/dr5fryhth/optishai', alt: 'vanilla-perfection' }
   ];
 
   const contentSlides = [
-    { title: 'Strawberry<br />Perfection', link: 'https://morenutrition.co.uk/products/chunky-flavour?_psq=chunky&_v=1.0' },
-    { title: 'Fudge<br />Brownie', link: 'https://morenutrition.co.uk/products/chunky-flavour?variant=51094746005668' },
-    { title: 'Vanilla Choc<br />Chip Cookie', link: 'https://morenutrition.co.uk/products/chunky-flavour?variant=51094747578532' },
-    { title: 'Salted<br />Caramel', link: 'https://morenutrition.co.uk/products/chunky-flavour?variant=51094765076644' },
-    { title: 'Vanilla<br />Perfection', link: 'https://morenutrition.co.uk/products/chunky-flavour?variant=51094761996452' }
+    { title: 'Fresh<br />Vegetables', link: '#'},
+    { title: 'Best <br />Provisions', link: '#'},
+    { title: 'Good<br />Meat', link: '#'},
+    { title: 'Tasty<br />Fruits', link: '#'},
+    { title: 'Everything<br />Else', link: '#' }
   ];
 
   return (
@@ -56,7 +56,7 @@ export default function Flavour() {
             <div data-flavour-slider className="flavour-swiper swiper">
               <div className="flavour-swiper-wrapper swiper-wrapper">
                 {slides.map((slide, index) => (
-                  <FlavourSlide key={index} doseImg={slide.doseImg} packImg={slide.packImg} alt={slide.alt} />
+                  <FlavourSlide key={index} doseImg={slide.doseImg} packImg={slide.packImg} secondPackImg={slide.secondPackImg} alt={slide.alt} />
                 ))}
               </div>
             </div>

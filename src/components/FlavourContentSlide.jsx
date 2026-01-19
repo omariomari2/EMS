@@ -4,7 +4,7 @@ export default function FlavourContentSlide({ title, link }) {
       <div className="flavour-content-slide-inner">
         <div className="flavour-content-slide-header">
           <h3 className="flavour-content-slider-title" dangerouslySetInnerHTML={{ __html: title }}></h3>
-          <p className="flavour-content-slider-subline">Chunky Flavour®</p>
+          <p className="flavour-content-slider-subline">GoShopGhana®</p>
         </div>
         <a href={link} target="_blank" rel="noopener noreferrer" className="button w-inline-block">
           <div className="button-cycle is-first">

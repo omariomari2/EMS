@@ -1,4 +1,4 @@
-export default function FlavourSlide({ doseImg, packImg, alt }) {
+export default function FlavourSlide({ doseImg, packImg, secondPackImg, alt }) {
   return (
     <div className="flavour-slide swiper-slide">
       <div className="flavour-slide-inner">
@@ -9,7 +9,7 @@ export default function FlavourSlide({ doseImg, packImg, alt }) {
           <img className="flavour-slide-pack-img" src={packImg} width="653" height="478" alt={`chunky-flavour-${alt}-pack`} sizes="(max-width: 653px) 100vw, 653px" data-inertia-item-child loading="lazy" />
         </div>
         <div data-inertia-item className="flavour-slide-pack is-second">
-          <img className="flavour-slide-pack-img" src={packImg} width="653" height="478" alt={`chunky-flavour-${alt}-pack`} sizes="(max-width: 653px) 100vw, 653px" data-inertia-item-child loading="lazy" />
+          <img className="flavour-slide-pack-img" src={secondPackImg} width="653" height="478" alt={`chunky-flavour-${alt}-pack`} sizes="(max-width: 653px) 100vw, 653px" data-inertia-item-child loading="lazy" />
         </div>
       </div>
     </div>
