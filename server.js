@@ -8,7 +8,7 @@ import App from './src/App.jsx';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-const rootDir = path.resolve(__dirname, '..');
+const rootDir = process.cwd();
 
 const app = express();
 const PORT = process.env.PORT || 3001;

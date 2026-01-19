@@ -6,7 +6,7 @@
   "main": "dist/server.js",
   "scripts": {
     "build:client": "esbuild src/client.jsx --bundle --outfile=public/dist/client.js --loader:.js=jsx --jsx=automatic --minify --sourcemap",
-    "build:server": "esbuild server.js --bundle --outfile=dist/server.js --platform=node --packages=external --loader:.jsx=jsx --format=esm --jsx=automatic --minify --external:react --external:react-dom --external:react-dom/server",
+    "build:server": "esbuild server.js --bundle --outfile=dist/server.js --platform=node --external:express --external:compression --loader:.jsx=jsx --format=esm --jsx=automatic --minify",
     "build": "npm run build:client && npm run build:server",
     "start": "npm run build && node dist/server.js",
     "dev": "npm run build && node --watch dist/server.js",
