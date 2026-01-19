@@ -68,8 +68,8 @@ const html = `<!DOCTYPE html>
       n.className += t + "js", ("ontouchstart" in o || o.DocumentTouch && c.documentElement.doScroll) && (n.className += t + "touch")
     }(window, document);
   </script>
-  <link href="https://ik.imagekit.io/dr5fryhth/logo.png?updatedAt=1768771460010" rel="shortcut icon" type="image/x-icon" />
-  <link href="https://ik.imagekit.io/dr5fryhth/logo.png?updatedAt=1768771460010" rel="apple-touch-icon" />
+  <link href="https://ik.imagekit.io/dr5fryhth/favicon" rel="shortcut icon" type="image/x-icon" />
+  <link href="https://ik.imagekit.io/dr5fryhth/favicon" rel="apple-touch-icon" />
   <script defer src="/js/script-cloud-umami-is.js" data-website-id="d3e54v103j8qbb.cloudfront.net"></script>
 </head>
 <body>
