@@ -1,15 +1,35 @@
 import React from 'react';
 import { renderToString } from 'react-dom/server';
-import App from '../src/App.jsx';
-import { writeFileSync } from 'fs';
-import { fileURLToPath } from 'url';
+import { writeFileSync, unlinkSync, mkdirSync } from 'fs';
+import { fileURLToPath, pathToFileURL } from 'url';
 import { dirname, join } from 'path';
+import { build } from 'esbuild';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 const rootDir = join(__dirname, '..');
+const distDir = join(rootDir, 'dist');
+const tempAppFile = join(distDir, 'temp-app.js');
 
+mkdirSync(distDir, { recursive: true });
+
+await build({
+  entryPoints: [join(rootDir, 'src', 'App.jsx')],
+  bundle: true,
+  outfile: tempAppFile,
+  platform: 'node',
+  format: 'esm',
+  jsx: 'automatic',
+  loader: { '.jsx': 'jsx' },
+  external: ['react', 'react-dom'],
+  packages: 'external'
+});
+
+const tempAppUrl = pathToFileURL(tempAppFile).href;
+const { default: App } = await import(tempAppUrl);
 const appHtml = renderToString(React.createElement(App));
+
+unlinkSync(tempAppFile);
 
 const html = `<!DOCTYPE html>
 <html data-wf-page="686c09a33211842a0ac0183d" data-wf-site="686c09a33211842a0ac0183d" lang="en">
