@@ -2,31 +2,30 @@ import ReviewItem from './ReviewItem.jsx';
 
 export default function Reviews() {
   const reviews = [
-    { heading: 'Best matcha ever!', text: 'I already have it and they bought it straight away too.', name: 'Daniela A.' },
-    { heading: 'Super delicious!', text: 'Super delicious with ice cubes, water and oat-almond milk.', name: 'Tina H.' },
-    { heading: 'Risk of addiction 🙈', text: 'The Iced Matcha Latte is so delicious, with a truly creamy consistency.', name: 'Sandra D.' },
-    { heading: 'The best Matcha.', text: 'This matcha has a sweet and tangy raspberry flavor. Perfect for breakfast or lunch.', name: 'Sandra W.' },
-    { heading: 'Highly recommended!', text: 'Very tasty, dissolves perfectly. No clumps and a proper matcha flavor.', name: 'Carolin S.' },
-    { heading: 'Favorite!!!', text: 'My favorite variety. Depending on my mood, I just add the matching Chunky flavor and enjoy 😌', name: 'Farah M.' }
+    { heading: 'Fast and reliable', text: 'Placed my order in the morning and everything arrived the same day in great condition.', name: 'Daniela A.' },
+    { heading: 'Saved me so much time', text: 'No more market runs after work. I order once, track it, and it shows up at my door.', name: 'Tina H.' },
+    { heading: 'Great quality produce', text: 'The fruits and veggies were fresh and packed carefully. Exactly what I hoped for.', name: 'Sandra D.' },
+    { heading: 'Transparent pricing', text: 'What I saw at checkout is what I paid. No surprise fees and no hidden add-ons.', name: 'Sandra W.' },
+    { heading: 'Super smooth experience', text: 'Simple ordering, quick updates, and delivery windows that actually work for my schedule.', name: 'Carolin S.' },
+    { heading: 'My new go-to', text: 'I use it weekly now. It feels like having a personal shopper without the hassle.', name: 'Farah M.' }
   ];
 
   return (
     <div id="reviews" className="testimonial-section">
       <div data-testimonial-parallax className="bg-img-wrapper">
-        <img className="testimonial-top-img" src="https://cdn.prod.website-files.com/686c09a33211842a0ac0183d/689541efc32332b4d96332e4_5aa593a5c181883619e1ec2e48b9a77009ae6ddd.webp" width="2048" alt="Iced Matcha Latte - More Nutrition" sizes="100vw" data-testimonial-parallax-item loading="lazy" srcSet="https://cdn.prod.website-files.com/686c09a33211842a0ac0183d/689541efc32332b4d96332e4_5aa593a5c181883619e1ec2e48b9a77009ae6ddd-p-500.webp 500w, https://cdn.prod.website-files.com/686c09a33211842a0ac0183d/689541efc32332b4d96332e4_5aa593a5c181883619e1ec2e48b9a77009ae6ddd-p-800.webp 800w, https://cdn.prod.website-files.com/686c09a33211842a0ac0183d/689541efc32332b4d96332e4_5aa593a5c181883619e1ec2e48b9a77009ae6ddd-p-1080.webp 1080w, https://cdn.prod.website-files.com/686c09a33211842a0ac0183d/689541efc32332b4d96332e4_5aa593a5c181883619e1ec2e48b9a77009ae6ddd-p-1600.webp 1600w, https://cdn.prod.website-files.com/686c09a33211842a0ac0183d/689541efc32332b4d96332e4_5aa593a5c181883619e1ec2e48b9a77009ae6ddd-p-2000.webp 2000w, https://cdn.prod.website-files.com/686c09a33211842a0ac0183d/689541efc32332b4d96332e4_5aa593a5c181883619e1ec2e48b9a77009ae6ddd-p-2600.webp 2600w, https://cdn.prod.website-files.com/686c09a33211842a0ac0183d/689541efc32332b4d96332e4_5aa593a5c181883619e1ec2e48b9a77009ae6ddd-p-3200.webp 3200w, https://cdn.prod.website-files.com/686c09a33211842a0ac0183d/689541efc32332b4d96332e4_5aa593a5c181883619e1ec2e48b9a77009ae6ddd.webp 4096w" />
-        <img className="bg-img" src="https://cdn.prod.website-files.com/686c09a33211842a0ac0183d/689541d1c4bb0b452cb46e3e_b525d1f05540193d88caa60b825b8887a650d649.webp" width="2048" alt="Iced Matcha Latte - More Nutrition" sizes="100vw" data-testimonial-parallax-item loading="lazy" srcSet="https://cdn.prod.website-files.com/686c09a33211842a0ac0183d/689541d1c4bb0b452cb46e3e_b525d1f05540193d88caa60b825b8887a650d649-p-500.webp 500w, https://cdn.prod.website-files.com/686c09a33211842a0ac0183d/689541d1c4bb0b452cb46e3e_b525d1f05540193d88caa60b825b8887a650d649-p-800.webp 800w, https://cdn.prod.website-files.com/686c09a33211842a0ac0183d/689541d1c4bb0b452cb46e3e_b525d1f05540193d88caa60b825b8887a650d649-p-1080.webp 1080w, https://cdn.prod.website-files.com/686c09a33211842a0ac0183d/689541d1c4bb0b452cb46e3e_b525d1f05540193d88caa60b825b8887a650d649-p-1600.webp 1600w, https://cdn.prod.website-files.com/686c09a33211842a0ac0183d/689541d1c4bb0b452cb46e3e_b525d1f05540193d88caa60b825b8887a650d649-p-2000.webp 2000w, https://cdn.prod.website-files.com/686c09a33211842a0ac0183d/689541d1c4bb0b452cb46e3e_b525d1f05540193d88caa60b825b8887a650d649-p-2600.webp 2600w, https://cdn.prod.website-files.com/686c09a33211842a0ac0183d/689541d1c4bb0b452cb46e3e_b525d1f05540193d88caa60b825b8887a650d649-p-3200.webp 3200w, https://cdn.prod.website-files.com/686c09a33211842a0ac0183d/689541d1c4bb0b452cb46e3e_b525d1f05540193d88caa60b825b8887a650d649.webp 4096w" />
+        <img className="testimonial-top-img" src="" width="2048" alt="Iced Matcha Latte - More Nutrition" sizes="100vw" data-testimonial-parallax-item loading="lazy" />
+        <img className="bg-img" src="https://ik.imagekit.io/dr5fryhth/ult" width="2048" alt="Iced Matcha Latte - More Nutrition" sizes="100vw" data-testimonial-parallax-item loading="lazy" />
       </div>
       <div className="testimonial-container">
         <div className="grid-layout">
           <div id="w-node-_188a35c2-2913-dd29-6c54-5bf8cbbe64f3-0ac01850" className="big-title-wrapper">
             <div className="testimonial-signature">
               <img src="https://cdn.prod.website-files.com/686c09a33211842a0ac0183d/68b2e8120f5b95bfbd87aebf_testimonial-signature.svg" loading="lazy" width="300" height="27" alt="testimonial-signature" className="testimonial-signature-img" />
-              <img src="https://cdn.prod.website-files.com/686c09a33211842a0ac0183d/68b2e8120f5b95bfbd87aebf_testimonial-signature.svg" loading="lazy" width="300" height="27" alt="testimonial-signature" className="testimonial-signature-img is-wiggle" />
             </div>
             <h2 className="testimonial-big-heading">
-              Clean. Green.
+              Go Easy. Go Safe.
               <br />
-              Goodness.
+              GoShop.
             </h2>
           </div>
           <div id="w-node-d56024cf-9b70-fc24-7ba0-e2b3ea8d1769-0ac01850" className="testimonial-slider">

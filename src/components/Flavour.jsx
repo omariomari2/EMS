@@ -23,17 +23,16 @@ export default function Flavour() {
       <div className="flavour-container">
         <div className="flavour-header">
           <div className="flavour-heading-wrap">
-            <h2 className="flavour-title">Chunky Flavour</h2>
-            <h3 data-highlight-text className="flavour-subline">New Taste, Low Sugar</h3>
+            <h2 className="flavour-title">Best Prices</h2>
+            <h3 data-highlight-text className="flavour-subline">Great Quality, Low Cost</h3>
           </div>
-          <p className="flavour-paragraph">Simply stir in 3 g of Chunky Flavour with your 300g Matcha Latte to create a sweeter flavour sensation!</p>
+          <p className="flavour-paragraph">GoShop gives presents an avenue to dodge the hassle, shouting, travel and the bargaining. We do all that for you!</p>
         </div>
         <div data-flavour-content className="flavour-content">
           <div className="flavour-left">
             <div className="flavour-signature-wrap">
               <div className="flavour-signature">
-                <img src="https://cdn.prod.website-files.com/686c09a33211842a0ac0183d/68c94823c24b2c7988de3d7a_slider-signature.svg" loading="lazy" width="300" height="90" alt="slider-signature" className="flavour-signature-img" />
-                <img src="https://cdn.prod.website-files.com/686c09a33211842a0ac0183d/68c94823c24b2c7988de3d7a_slider-signature.svg" loading="lazy" width="300" height="90" alt="slider-signature" className="flavour-signature-img is-wiggle" />
+                    <div className="stage-deco-text is-wiggle league-script-regular">Your foodstuffs here</div>
               </div>
               <div style={{ '--animation-delay': '.15s' }} className="flavour-signature-arrow">
                 <img src="https://cdn.prod.website-files.com/686c09a33211842a0ac0183d/68c94823659937fb4ddc9834_slider-signature-arrow.svg" loading="lazy" width="147" height="150" alt="slider-signature-arrow" className="flavour-signature-arrow-img" />
@@ -41,13 +40,13 @@ export default function Flavour() {
               </div>
             </div>
             <div data-inertia-item className="flavour-left-dose">
-              <img src="https://cdn.prod.website-files.com/686c09a33211842a0ac0183d/68c93e5ef45e668c761efd15_slider-base-product-visual.webp" loading="lazy" width="481" height="1002" alt="slider-base-product-visual" data-inertia-item-child className="flavour-left-dose-img" />
+                  <img src="https://ik.imagekit.io/dr5fryhth/go-shopping/images/gmg.png" loading="lazy" width="481" height="1002" alt="slider-base-product-visual" data-inertia-item-child className="flavour-left-dose-img" />
             </div>
             <div data-inertia-item className="flavour-left-pack is-first">
-              <img src="https://cdn.prod.website-files.com/686c09a33211842a0ac0183d/68c93e5ef2ba34cbfb878f82_slider-base-product-pack.webp" loading="lazy" width="447" height="699" alt="slider-base-product-pack" data-inertia-item-child className="flavour-left-pack-img" />
+                  <img src="https://ik.imagekit.io/dr5fryhth/go-shopping/images/nice.png" loading="lazy" width="447" height="699" alt="slider-base-product-pack" data-inertia-item-child className="flavour-left-pack-img" />
             </div>
             <div data-inertia-item className="flavour-left-pack is-second">
-              <img src="https://cdn.prod.website-files.com/686c09a33211842a0ac0183d/68c93e5ef2ba34cbfb878f82_slider-base-product-pack.webp" loading="lazy" width="447" height="699" alt="slider-base-product-pack" data-inertia-item-child className="flavour-left-pack-img" />
+                  <img src="https://ik.imagekit.io/dr5fryhth/go-shopping/images/nice.png" loading="lazy" width="447" height="699" alt="slider-base-product-pack" data-inertia-item-child className="flavour-left-pack-img" />
             </div>
           </div>
           <div className="flavour-plus">

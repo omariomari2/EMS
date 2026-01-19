@@ -25,11 +25,22 @@ export default function HeroCanvas() {
     const canvasRef = useRef(null);
     const containerRef = useRef(null);
     const [isReady, setIsReady] = useState(false);
+    const [isMobile, setIsMobile] = useState(false);
     const animationFrameRef = useRef(null);
 
     useEffect(() => {
-        // Delay canvas initialization to let other hero components load first
-        const delayTimer = setTimeout(() => {
+        const checkMobile = () => {
+            setIsMobile(window.innerWidth <= 991);
+        };
+        
+        checkMobile();
+        window.addEventListener('resize', checkMobile);
+        
+        return () => window.removeEventListener('resize', checkMobile);
+    }, []);
+
+    useEffect(() => {
+        let delayTimer = setTimeout(() => {
             const canvas = canvasRef.current;
             const container = containerRef.current;
             if (!canvas || !container) return;
@@ -198,7 +209,7 @@ export default function HeroCanvas() {
             style={{
                 width: '100%',
                 height: '100%',
-                minHeight: '400px',
+                minHeight: '600px',
                 display: 'flex',
                 justifyContent: 'center',
                 alignItems: 'center',
@@ -209,15 +220,15 @@ export default function HeroCanvas() {
                 ref={canvasRef}
                 style={{
                     width: '130%',
-                    height: '130%',
+                    height: '150%',
                     minWidth: '380px',
-                    minHeight: '380px',
+                    minHeight: '550px',
                     borderRadius: '12px',
                     objectFit: 'contain',
                     transform: isReady ? 'translateY(0)' : 'translateY(150px)',
                     opacity: isReady ? 1 : 0,
                     transition: 'transform 0.6s ease-out, opacity 0.4s ease-out',
-                    marginTop: '-90px'
+                    marginTop: isMobile ? '-30px' : '-90px'
                 }}
             />
         </div>

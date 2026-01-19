@@ -8,7 +8,7 @@ import App from './src/App.jsx';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-const rootDir = process.cwd();
+const rootDir = path.resolve(__dirname, '..');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -23,12 +23,14 @@ app.get('/', (req, res) => {
 <html data-wf-page="686c09a33211842a0ac0183d" data-wf-site="686c09a33211842a0ac0183d" lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>More Nutrition - Matcha meets Protein</title>
-  <meta content="Discover the More Nutrition Iced Matcha Latte in a whole new way: 20 g protein, 85 mg caffeine, 95% less sugar, refreshing, light and full of flavor." name="description" />
-  <meta content="More Nutrition - Matcha meets Protein" property="og:title" />
-  <meta content="Discover the More Nutrition Iced Matcha Latte in a whole new way: 20 g protein, 85 mg caffeine, 95% less sugar, refreshing, light and full of flavor." property="og:description" />
-  <meta content="More Nutrition - Matcha meets Protein" property="twitter:title" />
-  <meta content="Discover the More Nutrition Iced Matcha Latte in a whole new way: 20 g protein, 85 mg caffeine, 95% less sugar, refreshing, light and full of flavor." property="twitter:description" />
+  <title>GoShopGhana | Fresh FoodStuffs Delivered To You</title>
+  <meta content="Fresh foodstuffs delivered to you across Ghana." name="description" />
+  <meta content="GoShopGhana | Fresh FoodStuffs Delivered To You" property="og:title" />
+  <meta content="Fresh foodstuffs delivered to you across Ghana." property="og:description" />
+  <meta content="https://ik.imagekit.io/dr5fryhth/logo.png?updatedAt=1768771460010" property="og:image" />
+  <meta content="GoShopGhana | Fresh FoodStuffs Delivered To You" property="twitter:title" />
+  <meta content="Fresh foodstuffs delivered to you across Ghana." property="twitter:description" />
+  <meta content="https://ik.imagekit.io/dr5fryhth/logo.png?updatedAt=1768771460010" property="twitter:image" />
   <meta property="og:type" content="website" />
   <meta content="summary_large_image" name="twitter:card" />
   <meta content="width=device-width, initial-scale=1" name="viewport" />
@@ -54,8 +56,8 @@ app.get('/', (req, res) => {
       n.className += t + "js", ("ontouchstart" in o || o.DocumentTouch && c.documentElement.doScroll) && (n.className += t + "touch")
     }(window, document);
   </script>
-  <link href="https://cdn.prod.website-files.com/686c09a33211842a0ac0183d/686c09a33211842a0ac0184e_favicon-32x32.png" rel="shortcut icon" type="image/x-icon" />
-  <link href="https://cdn.prod.website-files.com/686c09a33211842a0ac0183d/686c09a33211842a0ac0184f_webclip-256x256.png" rel="apple-touch-icon" />
+  <link href="https://ik.imagekit.io/dr5fryhth/logo.png?updatedAt=1768771460010" rel="shortcut icon" type="image/x-icon" />
+  <link href="https://ik.imagekit.io/dr5fryhth/logo.png?updatedAt=1768771460010" rel="apple-touch-icon" />
   <script defer src="/js/script-cloud-umami-is.js" data-website-id="d3e54v103j8qbb.cloudfront.net"></script>
 </head>
 <body>
@@ -77,12 +79,6 @@ app.get('/', (req, res) => {
   res.send(html);
 });
 
-// Export app for Vercel
-export default app;
-
-// Only listen if run directly
-if (process.argv[1] === __filename) {
-  app.listen(PORT, () => {
-    console.log(`Server running at http://localhost:${PORT}`);
-  });
-}
+app.listen(PORT, () => {
+  console.log(`Server running at http://localhost:${PORT}`);
+});

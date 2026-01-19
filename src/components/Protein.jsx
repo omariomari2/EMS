@@ -68,7 +68,7 @@ const Protein = () => {
                         <div className="button-cycle-bg"></div>
                     </div>
                 </a>
-                <p className="paragraph">Go Shop provides real products, fresh  foodstuff, and quality staples from your favorite narkets and vendors. Our mission is to connect you with the best markets in town without any hassle.</p>
+                <p className="paragraph">Our crop-growers, vendors and small businesses are the backbone of our community. Go-Shop is committed to supporting and ensuring they have access to the resources they need to succeed, and you to enjoy the best of their work.</p>
             </div>
         </div>
     );

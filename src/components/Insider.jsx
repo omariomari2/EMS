@@ -6,9 +6,9 @@ export default function Insider() {
           <h2 id="w-node-_3e09cbcc-bb63-d8d5-fc92-5249d862c0ff-0ac01850" className="insider-heading">
             You deserve the best.
             <br />
-            You deserve More:
+            We bring the best:
             <br />
-            <span className="light-green-span">Iced Matcha Latte.</span>
+            <span className="light-green-span">Straight To You.</span>
           </h2>
           <div id="w-node-e1fee9ee-097a-d41e-6a8c-8fb81a411381-0ac01850" className="insider-wrapper">
             <div id="w-node-_93a09ee3-b180-b755-d23e-d7d2b5f676da-0ac01850" className="testimonial-wrapper">
@@ -16,7 +16,7 @@ export default function Insider() {
                 <div data-inertia-item-child className="testimonial-inner _1">
                   <div className="testimonial-media w-embed">
                     <video playsInline loop muted disablePictureInPicture disableRemotePlayback preload="metadata" data-wf-ignore="true" data-object-fit="cover" data-video>
-                      <source src="https://goshop-images.lon1.cdn.digitaloceanspaces.com/newui/usevideo%20(1)%20(1)%20(1).mp4" data-wf-ignore="true" />
+                      <source src="https://goshop-images.lon1.cdn.digitaloceanspaces.com/newui/Gradient%20Text%20_%20Countdown.mp4" data-wf-ignore="true" />
                     </video>
                   </div>
                   <button type="button" data-video-button aria-label="Sound on/off" className="testimonial-sound-btn is-top">
@@ -33,7 +33,7 @@ export default function Insider() {
                 <div data-inertia-item-child className="testimonial-inner _2">
                   <div className="testimonial-media w-embed">
                     <video playsInline loop muted disablePictureInPicture disableRemotePlayback preload="metadata" data-wf-ignore="true" data-object-fit="cover" data-video>
-                      <source src="https://goshop-images.lon1.cdn.digitaloceanspaces.com/newui/Gradient%20Text%20_%20Countdown.mp4" data-wf-ignore="true" />
+                      <source src="https://goshop-images.lon1.cdn.digitaloceanspaces.com/newui/usevideo%20(1)%20(1)%20(1).mp4" data-wf-ignore="true" />
                     </video>
                   </div>
                   <button type="button" data-video-button aria-label="Sound on/off" className="testimonial-sound-btn">

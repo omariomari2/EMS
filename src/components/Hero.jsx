@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import HeroCanvas from './HeroCanvas';
+import bestJson from '../assets/best.json';
 
 export default function Hero() {
   const [showMarquee, setShowMarquee] = useState(false);
@@ -26,20 +27,11 @@ export default function Hero() {
     let url = null;
 
     const player = lottiePlayerRef.current;
-    if (player) {
-      fetch('/assets/best.json')
-        .then((response) => response.json())
-        .then((bestJson) => {
-          if (player) {
-            const jsonString = JSON.stringify(bestJson);
-            const blob = new Blob([jsonString], { type: 'application/json' });
-            url = URL.createObjectURL(blob);
-            player.src = url;
-          }
-        })
-        .catch((error) => {
-          console.error('Failed to load Lottie animation:', error);
-        });
+    if (player && bestJson) {
+      const jsonString = JSON.stringify(bestJson);
+      const blob = new Blob([jsonString], { type: 'application/json' });
+      url = URL.createObjectURL(blob);
+      player.src = url;
     }
 
     return () => {
@@ -108,28 +100,28 @@ export default function Hero() {
                   <div data-inertia-item className="stage-fact-outer">
                     <div data-load-stage-fact data-inertia-item-child className="stage-fact is-first">
                       <div className="stage-fact-wrap">
-                        <div className="stage-fact-number">20</div>
-                        <div className="stage-fact-unit">g</div>
+                        <div className="stage-fact-number">100</div>
+                        <div className="stage-fact-unit">%</div>
                       </div>
-                      <div className="stage-fact-text">of Protein</div>
+                      <div className="stage-fact-text">product quality</div>
                     </div>
                   </div>
                   <div data-inertia-item className="stage-fact-outer">
                     <div data-load-stage-fact data-inertia-item-child className="stage-fact is-second">
                       <div className="stage-fact-wrap">
-                        <div className="stage-fact-number">95</div>
-                        <div className="stage-fact-unit">%</div>
+                        <div className="stage-fact-number">&lt; 1</div>
+                        <div className="stage-fact-unit">hr</div>
                       </div>
-                      <div className="stage-fact-text">less Sugar</div>
+                      <div className="stage-fact-text">delivery time</div>
                     </div>
                   </div>
                   <div data-inertia-item className="stage-fact-outer">
                     <div data-load-stage-fact data-inertia-item-child className="stage-fact is-third">
                       <div className="stage-fact-wrap">
-                        <div className="stage-fact-number">85</div>
-                        <div className="stage-fact-unit">mg</div>
+                        <div className="stage-fact-number">0</div>
+                        <div className="stage-fact-unit">₵</div>
                       </div>
-                      <div className="stage-fact-text">of Caffeine</div>
+                      <div className="stage-fact-text">additional fees</div>
                     </div>
                   </div>
                 </div>
@@ -142,7 +134,7 @@ export default function Hero() {
               <div className="stage-right">
                 <div className="stage-text-wrap">
                   <h1 data-load-stage-title className="hero-heading">
-                    <span className="white-span">Buy.</span>
+                    <span className="white-span">Shop.</span>
                     <br />
                     Receive.
                     <br />
@@ -176,7 +168,7 @@ export default function Hero() {
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 1440 293" width="100%" style={{ overflow: 'visible' }} data-marquee-svg className="marquee-text-svg">
             <path d="M-68 300C173 173 515.5 1 937.2 1 1254.5 1 1468 183.3 1543 246.9" id="curve"></path>
             <text width="100%" style={{ transform: 'translate3d(0,0,0)' }}>
-              <textPath style={{ transform: 'translate3d(0,0,0)' }} alignmentBaseline="top" href="#curve">Go Easy · Go Smooth · Go Stress-Free · Go-Shop</textPath>
+              <textPath style={{ transform: 'translate3d(0,0,0)' }} alignmentBaseline="top" href="#curve">Easy · Go Easy · Go Smooth · Go-Shop</textPath>
             </text>
           </svg>
           <div className="marquee-overlay"></div>
