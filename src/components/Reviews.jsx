@@ -13,7 +13,6 @@ export default function Reviews() {
   return (
     <div id="reviews" className="testimonial-section">
       <div data-testimonial-parallax className="bg-img-wrapper">
-        <img className="testimonial-top-img" src="" width="2048" alt="Iced Matcha Latte - More Nutrition" sizes="100vw" data-testimonial-parallax-item loading="lazy" />
         <img className="bg-img" src="https://ik.imagekit.io/dr5fryhth/ult" width="2048" alt="Iced Matcha Latte - More Nutrition" sizes="100vw" data-testimonial-parallax-item loading="lazy" />
       </div>
       <div className="testimonial-container">

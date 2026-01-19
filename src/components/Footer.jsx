@@ -6,7 +6,7 @@ export default function Footer() {
         <div id="w-node-_52f3956c-463e-cf84-00da-ec073fe306cc-0ac01850" className="footer-content">
           <div id="w-node-_103e8af5-3d0c-0c66-5f7b-cd9c707fa04f-0ac01850" className="footer-fact-wrapper">
             <h4 className="footer-heading">
-              <span data-highlight-text className="heading-line">Get All You</span>
+              <span data-highlight-text className="heading-line">Get All Your</span>
               <br />
               Foodstuff
             </h4>

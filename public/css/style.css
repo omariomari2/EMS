@@ -731,6 +731,7 @@ h3,
 
   .stage-logo {
     margin-top: 1.5em !important;
+    min-height: 35vh !important;
   }
 
   .stage-deco-text {
@@ -769,6 +770,7 @@ h3,
 
   .stage-logo {
     margin-top: 1.5em !important;
+    min-height: 35vh !important;
   }
 
   .stage-deco-text {
@@ -807,6 +809,7 @@ h3,
 
   .stage-logo {
     margin-top: 2em !important;
+    min-height: 35vh !important;
   }
 
   .stage-deco-text {
@@ -837,16 +840,16 @@ h3,
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr !important;
   }
 
-  .benefit-table-title-wrapper > .benefit-table-title:first-child {
+  .benefit-table-title-wrapper>.benefit-table-title:first-child {
     grid-column: 1 / 6;
   }
 
-  .benefit-table-title-wrapper > .benefit-table-title:nth-child(2) {
+  .benefit-table-title-wrapper>.benefit-table-title:nth-child(2) {
     grid-column: 6;
     text-align: center;
   }
 
-  .benefit-table-title-wrapper > .benefit-table-title:nth-child(3) {
+  .benefit-table-title-wrapper>.benefit-table-title:nth-child(3) {
     grid-column: 7;
     text-align: center;
   }
