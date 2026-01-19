@@ -734,6 +734,13 @@ h3,
     min-height: 35vh !important;
   }
 
+  .stage-logo-svg {
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 100% !important;
+    opacity: 1 !important;
+  }
+
   .stage-deco-text {
     margin-bottom: 1.5em !important;
   }
@@ -773,6 +780,13 @@ h3,
     min-height: 35vh !important;
   }
 
+  .stage-logo-svg {
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 100% !important;
+    opacity: 1 !important;
+  }
+
   .stage-deco-text {
     margin-bottom: 2em !important;
   }
@@ -810,6 +824,13 @@ h3,
   .stage-logo {
     margin-top: 2em !important;
     min-height: 35vh !important;
+  }
+
+  .stage-logo-svg {
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 100% !important;
+    opacity: 1 !important;
   }
 
   .stage-deco-text {

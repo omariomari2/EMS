@@ -225,7 +225,7 @@
 @media screen and (max-width: 767px) {
     .hm-protein {
         flex-direction: column;
-        min-height: 60vh !important;
+        min-height: 80vh !important;
         margin-top: -4rem;
     }
 
@@ -285,8 +285,8 @@
         width: auto !important;
         margin: 0 !important;
         padding: 1rem !important;
-        font-size: 0.875rem !important;
-        line-height: 1.4 !important;
+        font-size: 1rem !important;
+        line-height: 1.5 !important;
         z-index: 10;
         color: #000000 !important;
     }
