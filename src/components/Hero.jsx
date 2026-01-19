@@ -1,6 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
 import HeroCanvas from './HeroCanvas';
-import bestJson from '../assets/best.json';
 
 export default function Hero() {
   const [showMarquee, setShowMarquee] = useState(false);
@@ -27,11 +26,20 @@ export default function Hero() {
     let url = null;
 
     const player = lottiePlayerRef.current;
-    if (player && bestJson) {
-      const jsonString = JSON.stringify(bestJson);
-      const blob = new Blob([jsonString], { type: 'application/json' });
-      url = URL.createObjectURL(blob);
-      player.src = url;
+    if (player) {
+      fetch('/assets/best.json')
+        .then((response) => response.json())
+        .then((bestJson) => {
+          if (player) {
+            const jsonString = JSON.stringify(bestJson);
+            const blob = new Blob([jsonString], { type: 'application/json' });
+            url = URL.createObjectURL(blob);
+            player.src = url;
+          }
+        })
+        .catch((error) => {
+          console.error('Failed to load Lottie animation:', error);
+        });
     }
 
     return () => {
