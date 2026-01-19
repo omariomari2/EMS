@@ -1,32 +1,10 @@
 {
     "version": 2,
-    "buildCommand": "npm run build",
-    "builds": [
+    "rewrites": [
         {
-            "src": "dist/server.js",
-            "use": "@vercel/node"
-        },
-        {
-            "src": "public/**",
-            "use": "@vercel/static"
+            "source": "/(.*)",
+            "destination": "/api/index.js"
         }
     ],
-    "routes": [
-        {
-            "src": "/css/(.*)",
-            "dest": "/public/css/$1"
-        },
-        {
-            "src": "/js/(.*)",
-            "dest": "/public/js/$1"
-        },
-        {
-            "src": "/dist/(.*)",
-            "dest": "/public/dist/$1"
-        },
-        {
-            "src": "/(.*)",
-            "dest": "/dist/server.js"
-        }
-    ]
+    "buildCommand": "npm run build"
 }

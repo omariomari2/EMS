@@ -77,6 +77,12 @@ app.get('/', (req, res) => {
   res.send(html);
 });
 
-app.listen(PORT, () => {
-  console.log(`Server running at http://localhost:${PORT}`);
-});
+// Export app for Vercel
+export default app;
+
+// Only listen if run directly
+if (process.argv[1] === __filename) {
+  app.listen(PORT, () => {
+    console.log(`Server running at http://localhost:${PORT}`);
+  });
+}
