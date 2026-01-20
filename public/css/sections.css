@@ -1,0 +1,450 @@
+/* ==========================================================================
+   Section & Layout Utilities
+   ========================================================================== */
+
+.c-section {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.o-container {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    max-width: var(--size-container);
+    padding-right: var(--grid-margin);
+    padding-left: var(--grid-margin);
+}
+
+.o-vertical {
+    display: flex;
+    flex-direction: column;
+}
+
+.o-row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: calc(var(--grid-gutter) / -2);
+    margin-left: calc(var(--grid-gutter) / -2);
+}
+
+.o-col {
+    position: relative;
+    width: 100%;
+    padding-right: calc(var(--grid-gutter) / 2);
+    padding-left: calc(var(--grid-gutter) / 2);
+}
+
+/* Grid System (12 columns base) */
+._w-12 {
+    width: 100%;
+}
+
+._w-6 {
+    width: 50%;
+}
+
+@media screen and (max-width: 991px) {
+    .md-w-10 {
+        width: 83.33333333%;
+    }
+
+    .md-w-12 {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .sm-w-24 {
+        width: 100%;
+    }
+
+    /* Assuming 24 col system or full width on small */
+}
+
+
+/* ==========================================================================
+   Typography
+   ========================================================================== */
+
+.t-display-2 {
+    font-size: clamp(3rem, 5vw, 6rem);
+    line-height: 0.9;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--dark-green);
+    margin-bottom: 0.5em;
+    text-transform: uppercase;
+}
+
+.t-body-2 {
+    font-size: 1.125rem;
+    line-height: 1.4;
+    color: var(--dark-green);
+    font-weight: 500;
+}
+
+/* ==========================================================================
+   Images & Backgrounds
+   ========================================================================== */
+
+.c-img-contain {
+    position: relative;
+    overflow: hidden;
+}
+
+
+.c-img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.c-img.absolute {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+
+/* ==========================================================================
+   Specific Protein Component Styling
+   ========================================================================== */
+
+.hm-protein {
+    background-color: var(--bg-pale);
+    background-image: url('https://ik.imagekit.io/dr5fryhth/go-shopping/images/woman.jpg?updatedAt=1768542988015');
+    background-position: center top;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-top: 10rem;
+    /* padding-bottom: 6rem; */
+    min-height: 100vh;
+    display: flex;
+    position: relative;
+    /* align-items: center; */
+}
+
+.hm-protein::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 40%;
+    background: linear-gradient(to top,
+            rgba(255, 255, 255, 0.6) 0%,
+            rgba(255, 255, 255, 0.45) 15%,
+            rgba(255, 255, 255, 0.25) 35%,
+            rgba(255, 255, 255, 0.1) 55%,
+            rgba(255, 255, 255, 0.03) 75%,
+            transparent 100%);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    mask-image: linear-gradient(to top, black 0%, black 60%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to top, black 0%, black 60%, transparent 100%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Ensure content sits above background image */
+.hm-protein .o-container {
+    position: relative;
+    z-index: 2;
+}
+
+/* Removed duplicate gradient - consolidated into .hm-protein::before */
+
+.margin-48 {
+    margin-bottom: 3rem;
+}
+
+.hm-protein .t-display-2 {
+    margin-top: -4rem;
+    text-transform: none;
+    font-size: 6.25em;
+}
+
+@media screen and (max-width: 991px) {
+    .hm-protein .t-display-2 {
+        font-size: 4.5em;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .hm-protein .t-display-2 {
+        font-size: 3.375em;
+    }
+}
+
+.hm-protein .button {
+    width: fit-content;
+    display: inline-flex;
+}
+
+.hm-protein .button .button-bg {
+    padding-right: 0.9375em;
+}
+
+.hm-protein>.protein-content-group {
+    position: absolute !important;
+    top: auto !important;
+    bottom: 2rem !important;
+    left: auto !important;
+    right: 2rem !important;
+    z-index: 10 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 1rem !important;
+}
+
+.hm-protein>.protein-content-group>.button {
+    position: relative !important;
+    bottom: auto !important;
+    right: auto !important;
+    z-index: 11 !important;
+}
+
+.hm-protein>.protein-content-group>.paragraph {
+    max-width: 390px !important;
+    position: relative !important;
+    bottom: auto !important;
+    right: auto !important;
+    margin: 0 !important;
+    z-index: 10 !important;
+    padding: 1.5rem !important;
+    border-radius: 0.375em !important;
+    color: #000000 !important;
+}
+
+@media screen and (max-width: 767px) {
+    .hm-protein {
+        flex-direction: column;
+        min-height: 80vh !important;
+        margin-top: -4rem;
+    }
+
+    .hm-protein .o-container {
+        margin-bottom: 0 !important;
+        padding-bottom: 0 !important;
+    }
+
+    .hm-protein .o-vertical {
+        margin-bottom: 0 !important;
+        padding-bottom: 0 !important;
+    }
+
+    .hm-protein .o-row {
+        margin-bottom: 0 !important;
+        padding-bottom: 0 !important;
+    }
+
+    .hm-protein .o-col {
+        margin-bottom: 0 !important;
+        padding-bottom: 0 !important;
+    }
+
+    .hm-protein>.protein-content-group {
+        position: absolute !important;
+        top: auto !important;
+        bottom: 1rem !important;
+        left: 1rem !important;
+        right: 1rem !important;
+        align-items: flex-start !important;
+        gap: 0.75rem !important;
+    }
+
+    .hm-protein>.protein-content-group>.button {
+        position: relative !important;
+        bottom: auto !important;
+        right: auto !important;
+        margin: 0 !important;
+        z-index: 11;
+        font-size: 0.875rem !important;
+    }
+
+    .hm-protein>.protein-content-group>.button .button-text {
+        font-size: 0.875rem !important;
+        padding: 0.5rem 0.875rem !important;
+    }
+
+    .hm-protein>.protein-content-group>.button .button-bg {
+        padding: 0.5rem 0.875rem !important;
+    }
+
+    .hm-protein>.protein-content-group>.paragraph {
+        position: relative !important;
+        bottom: auto !important;
+        right: auto !important;
+        max-width: 100% !important;
+        width: auto !important;
+        margin: 0 !important;
+        padding: 1rem !important;
+        font-size: 1rem !important;
+        line-height: 1.5 !important;
+        z-index: 10;
+        color: #000000 !important;
+    }
+}
+
+/* ==========================================================================
+   Buttons
+   ========================================================================== */
+
+.c-btn {
+    position: relative;
+    display: inline-flex;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.c-btn-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--dark-green);
+    border-radius: 999px;
+    /* Pill shape */
+    transition: transform 0.3s ease;
+}
+
+.c-btn.is-secondary.is-blue .c-btn-bg {
+    background-color: var(--blue-dark);
+}
+
+.c-btn-inner {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 1rem 2rem;
+    color: var(--white);
+    z-index: 1;
+    gap: 1rem;
+}
+
+.c-btn-txt {
+    position: relative;
+    overflow: hidden;
+    line-height: 1.2;
+    font-weight: 600;
+}
+
+.c-btn-label.line-2 {
+    position: absolute;
+    top: 100%;
+    left: 0;
+}
+
+.c-btn-icon-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2em;
+    height: 2em;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+}
+
+/* ==========================================================================
+   Freedom Component Styling
+   ========================================================================== */
+
+.hm-why {
+    background-color: var(--white);
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+    min-height: 80vh;
+}
+
+.c-freedom {
+    position: relative;
+    z-index: 2;
+}
+
+.t-display-1 {
+    font-size: clamp(4rem, 7vw, 8rem);
+    line-height: 0.85;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    color: var(--dark-green);
+    margin: 0;
+}
+
+.margin-172 {
+    margin-bottom: 10rem;
+}
+
+@media screen and (max-width: 991px) {
+    .margin-172 {
+        margin-bottom: 5rem;
+    }
+}
+
+.margin-40 {
+    margin-top: 2.5rem;
+}
+
+.span-wrap {
+    position: relative;
+    display: inline-block;
+    z-index: 1;
+}
+
+.span-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.span-bg.is-2 svg {
+    width: 120%;
+    left: -10%;
+    position: absolute;
+    top: 20%;
+}
+
+/* Image Positioning */
+.c-freedom_rt {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.c-img-contain.hand {
+    position: absolute;
+    top: 10%;
+    right: -5%;
+    width: 80%;
+    max-width: 600px;
+}
+
+@media screen and (max-width: 991px) {
+    .c-freedom_rt {
+        position: relative;
+        width: 100%;
+        height: auto;
+        margin-top: 3rem;
+    }
+
+    .c-img-contain.hand {
+        position: relative;
+        top: auto;
+        right: auto;
+        width: 100%;
+        height: auto;
+    }
+}
