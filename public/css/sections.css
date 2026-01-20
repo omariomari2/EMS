@@ -116,7 +116,7 @@
    ========================================================================== */
 
 .hm-protein {
-    background-color: var(--bg-pale);
+    background-color: var(--bg-light);
     background-image: url('https://ik.imagekit.io/dr5fryhth/go-shopping/images/woman.jpg?updatedAt=1768542988015');
     background-position: center top;
     background-size: cover;
@@ -357,7 +357,7 @@
    ========================================================================== */
 
 .hm-why {
-    background-color: var(--white);
+    background-color: var(--bg-light);
     padding-top: 8rem;
     padding-bottom: 8rem;
     min-height: 80vh;

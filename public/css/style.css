@@ -201,7 +201,7 @@ body {
 
 /* Body and Main Backgrounds */
 .body {
-  background-color: var(--bg-pale) !important;
+  background-color: var(--bg-light) !important;
 }
 
 /* Hero Section */
@@ -364,7 +364,8 @@ h3,
 
 /* Insider Section */
 .insider-section {
-  background-color: var(--bg-pale) !important;
+  background-color: var(--bg-light) !important;
+  margin-top: 0 !important;
 }
 
 /* Benefit Section */
@@ -378,7 +379,7 @@ h3,
 
 /* Testimonial Section */
 .testimonial-section {
-  background-color: var(--orange-dark) !important;
+  background-color: var(--bg-light) !important;
 }
 
 .testimonial-slider-item {
@@ -418,7 +419,7 @@ h3,
 
 /* Payment Section */
 .payment-section {
-  background-color: var(--bg-pale) !important;
+  background-color: var(--bg-light) !important;
 }
 
 .payment-method-item {
@@ -470,7 +471,7 @@ h3,
 
 /* Flavour Section */
 .flavour {
-  background-color: var(--bg-pale) !important;
+  background-color: var(--bg-light) !important;
   color: var(--dark-green) !important;
 }
 
@@ -680,9 +681,20 @@ h3,
   fill: var(--yellow-dark) !important;
 }
 
+/* Marquee */
+.marquee {
+  z-index: 10 !important;
+}
+
 /* Marquee Text */
 .marquee-text-svg text {
   fill: var(--bg-light) !important;
+}
+
+/* Marquee Overlay */
+.marquee-overlay {
+  background-color: var(--bg-light) !important;
+  z-index: -1 !important;
 }
 
 /* Selection Color */
