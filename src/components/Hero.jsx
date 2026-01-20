@@ -26,16 +26,58 @@ export default function Hero() {
   useEffect(() => {
     let url = null;
     let cancelled = false;
+    let retryTimer = null;
+    let retryCount = 0;
+    const maxRetries = 4;
+    const retryDelayMs = 700;
+    let player = null;
 
-    const applyLottieSrc = (player) => {
+    const playLottie = () => {
+      if (!player || typeof player.play !== 'function') {
+        return;
+      }
+      player.play();
+    };
+
+    const applyLottieSrc = () => {
       if (!player || !url) {
+        return;
+      }
+      if (typeof player.load === 'function') {
+        player.load(url);
         return;
       }
       player.setAttribute('src', url);
     };
 
+    const scheduleRetry = () => {
+      if (cancelled || retryCount >= maxRetries) {
+        return;
+      }
+      retryCount += 1;
+      retryTimer = setTimeout(() => {
+        if (cancelled) {
+          return;
+        }
+        applyLottieSrc();
+        playLottie();
+        scheduleRetry();
+      }, retryDelayMs);
+    };
+
+    const handleReady = () => {
+      if (cancelled) {
+        return;
+      }
+      if (retryTimer) {
+        clearTimeout(retryTimer);
+        retryTimer = null;
+      }
+      playLottie();
+    };
+
     const setLottieSrc = async () => {
-      const player = lottiePlayerRef.current;
+      player = lottiePlayerRef.current;
       if (!player || !bestJson) {
         return;
       }
@@ -44,7 +86,10 @@ export default function Hero() {
       const blob = new Blob([jsonString], { type: 'application/json' });
       url = URL.createObjectURL(blob);
 
-      applyLottieSrc(player);
+      player.addEventListener('load', handleReady);
+      player.addEventListener('ready', handleReady);
+      player.addEventListener('error', scheduleRetry);
+      applyLottieSrc();
 
       const customElementsRegistry = window.customElements;
       if (customElementsRegistry?.whenDefined) {
@@ -59,13 +104,23 @@ export default function Hero() {
         return;
       }
 
-      applyLottieSrc(player);
+      applyLottieSrc();
+      playLottie();
+      scheduleRetry();
     };
 
     setLottieSrc();
 
     return () => {
       cancelled = true;
+      if (retryTimer) {
+        clearTimeout(retryTimer);
+      }
+      if (player) {
+        player.removeEventListener('load', handleReady);
+        player.removeEventListener('ready', handleReady);
+        player.removeEventListener('error', scheduleRetry);
+      }
       if (url) {
         URL.revokeObjectURL(url);
       }

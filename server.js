@@ -62,7 +62,6 @@ app.get('/', (req, res) => {
 </head>
 <body>
   <div id="root">${appHtml}</div>
-  <script src="/dist/client.js"></script>
   <script src="/js/script-d3e54v103j8qbb-cloudfront-net.js" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
   <script src="/js/script-686c09a33211842a0ac0183d.js" type="text/javascript"></script>
   <script src="/js/script-gsap.js" type="text/javascript"></script>
@@ -73,6 +72,7 @@ app.get('/', (req, res) => {
   <script src="/js/script-gsap-5.js" type="text/javascript"></script>
   <script src="/js/script.js"></script>
   <script src="/js/script-scripts.js"></script>
+  <script src="/dist/client.js"></script>
 </body>
 </html>`;
 
