@@ -1,167 +1,191 @@
-<%
-const contactData = (typeof contact !== 'undefined' && contact) ? contact : {};
-const headingPrimary = contactData.headingPrimary || 'Book a call with a Veo expert';
-const headingSecondary = contactData.headingSecondary || 'Claim your free Veo Live access';
-const bodyPrimary = contactData.bodyPrimary || 'Thanks for showing interest in our product. We are happy to help you with your questions and inquiries about our products. Fill out the form and a Veo expert will call you at your desired time. We speak several different languages.';
-const bodyTertiary = contactData.bodyTertiary || 'Thanks for showing interest in our product. We are happy to help you with your questions and inquiries about our products. Fill out the form and a Veo expert will call you at your desired time. We speak several different languages.';
-const submitLabel = contactData.submitLabel || 'Submit & choose time';
-const successHeading = contactData.successHeading || 'Please wait, booking options are loading.';
-const errorText = contactData.errorText || 'Oops! Something went wrong while submitting the form. If the problem persists, try to change your Wi-Fi or disable any VPNs you might be using.';
-%>
-<aside id="call" color-theme="" class="section_basic6 background-color-primary">
-				<div class="padding-global">
-					<div class="container-small">
-						<div class="padding-section-large">
-							<div class="text-align-center">
-								<div class="margin-bottom margin-small">
-									<div class="w-optimization">
-										<div data-wf-experience-417234632="" data-wf-variation-617118717=""
-											class="w-optimization">
-											<h1 animate="false" class="align-center heading-style-h2"><%= headingPrimary %></h1>
-										</div>
-										<div data-wf-experience-417234632="" data-wf-variation-617118716=""
-											data-wf-hidden-variation="" class="w-optimization">
-											<h1 class="align-center heading-style-h2"><%= headingSecondary %></h1>
-										</div>
-									</div>
+<% const contactData=(typeof contact !=='undefined' && contact) ? contact : {}; const
+	headingPrimary=contactData.headingPrimary || 'Contact us for any inquiries' ; const
+	headingSecondary=contactData.headingSecondary || 'Claim your free Veo Live access' ; const
+	bodyPrimary=contactData.bodyPrimary
+	|| 'Thanks for showing interest in Kabaka 2 Plaza. We are happy to help you with your questions and inquiries about any of our services. Fill out the form below and we will make sure to assist you with anything you need.'
+	; const bodyTertiary=contactData.bodyTertiary
+	|| 'Thanks for showing interest in Kabaka 2 Plaza. We are happy to help you with your questions and inquiries about any of our services. Fill out the form below and we will make sure to assist you with anything you need.'
+	; const submitLabel=contactData.submitLabel || 'Submit' ; const successHeading=contactData.successHeading
+	|| 'Please wait, booking options are loading.' ; const errorText=contactData.errorText
+	|| 'Oops! Something went wrong while submitting the form. If the problem persists, try to change your Wi-Fi or disable any VPNs you might be using.'
+	; %>
+	<aside id="call" color-theme="" class="section_basic6 background-color-primary">
+		<div class="padding-global">
+			<div class="container-small">
+				<div class="padding-section-large">
+					<div class="text-align-center">
+						<div class="margin-bottom margin-small">
+							<div class="w-optimization">
+								<div data-wf-experience-417234632="" data-wf-variation-617118717=""
+									class="w-optimization">
+									<h1 animate="false" class="align-center heading-style-h2">
+										<%= headingPrimary %>
+									</h1>
 								</div>
-								<div class="w-optimization">
-									<div data-wf-experience-417234632="" data-wf-variation-617118717=""
-										class="w-optimization">
-										<p animate="false" class="text-size-medium"><%= bodyPrimary %>
-																	<br />
-																</p>
-									</div>
-									<div data-wf-experience-417234632="" data-wf-variation-617118716=""
-										data-wf-hidden-variation="" class="w-optimization">
-										<p class="text-size-medium">
-											Get Veo Live for free and start live streaming your matches. Save
-											<span data-region-visibility="UNKI">£579</span>
-											<span data-region-visibility="NAMA">$759</span>
-											<span data-region-visibility="LATA">$599</span>
-											<span data-region-visibility="SHIM">759 €</span>
-											<span data-region-visibility="PCAN">AU$1159</span>
-											<span data-region-visibility="SSAF, ASIA, EURO, MENA, DNMK">639 €</span>
-											on this special, limited-time bundle. Reach out to our sales team today to
-											claim the offer!
-											<br />
-										</p>
-									</div>
+								<div data-wf-experience-417234632="" data-wf-variation-617118716=""
+									data-wf-hidden-variation="" class="w-optimization">
+									<h1 class="align-center heading-style-h2">
+										<%= headingSecondary %>
+									</h1>
 								</div>
-								<div class="w-optimization">
-									<div data-wf-experience-417226224="" data-wf-variation-617100100=""
-										class="w-optimization"></div>
-									<div data-wf-experience-417226224="" data-wf-variation-617100101=""
-										data-wf-hidden-variation="" class="w-optimization">
-										<p class="text-size-medium"><%= bodyTertiary %></p>
-									</div>
-								</div>
-								<div class="margin-top margin-medium">
-									<div class="button-group is-center">
-										<div class="form_component">
-											<div id="form-block-component" data-disable-empty-option=""
-												class="form_component w-form">
-												<form method="get" ga-submit="form_submission"
-													name="wf-form-Form-Component" data-name="Form Component"
-													form-name="Sales Call Form" id="wf-form-Form-Component"
-													class="form_layout" data-wf-page-id="65c1f26994399a0f1f11409b"
-													data-wf-element-id="365e5011-0c02-029c-8c31-cf84875061a8">
-													<div class="form_field-wrapper">
-														<label for="Full-Name" class="form_field-label">Name*</label>
-														<input class="form_input w-input" maxlength="256" name="Full-Name" data-name="Full Name" placeholder="Full name" type="text" id="Full-Name" required="" />
-													</div>
-													<div class="form_field-wrapper">
-														<label for="Phone-Plain" class="form_field-label">Number*</label>
-														<input class="form_input w-input" maxlength="256" name="Phone-Plain" data-int-phone="" data-name="Phone-Plain" placeholder="22 33 44 55" type="tel" id="Phone-Plain" required="" />
-														<div class="form_phone-validation">
-															<div class="form_validation-text">Invalid number</div>
-															<div class="form_validation-text">Invalid country code</div>
-															<div class="form_validation-text">Too short</div>
-															<div class="form_validation-text">Too long</div>
-														</div>
-														<div class="form_input-hidden w-embed">
-															<input type="text" name="phone-number" required="" id="phone_number" placeholder="Complete phone number" style="display:none;" />
-															<input type="hidden" name="Country" id="country" placeholder="Country" />
-														</div>
-													</div>
-													<div class="form_field-wrapper">
-														<label for="Inquiry" class="form_field-label">Inquiry*</label>
-														<input class="form_input w-input" maxlength="256" name="Inquiry" data-name="Inquiry" placeholder="Inquiry" type="text" id="Inquiry" required="" />
-													</div>
-													<div class="form_field-wrapper">
-														<label for="Help-Today" class="form_field-label">What can we help you with today?*</label>
-														<textarea placeholder="Tell us more" maxlength="5000" id="Help-Today" name="Help-Today" data-name="Help Today" class="form_input is-text-area w-input" required=""></textarea>
-													</div>
-													<label class="w-checkbox form_checkbox" id="sms-consent-wrapper" data-display="flex">
-														<div class="w-checkbox-input w-checkbox-input--inputType-custom form_checkbox-icon"></div>
-														<input type="checkbox" name="SMS-Consent" id="SMS-Consent" data-name="SMS Consent" style="opacity:0;position:absolute;z-index:-1" />
-														<span for="SMS-Consent" class="form_checkbox-label w-form-label">I consent to receive SMS updates.</span>
-													</label>
-<div class="form_input-hidden w-embed">
-														<input type="hidden" name="Page URL" id="page_url"
-															data-current-page="" placeholder="Page URL" />
-														<input type="hidden" name="utm_source" id="utm_source"
-															placeholder="utm_source" />
-														<input type="hidden" name="utm_medium" id="utm_medium"
-															placeholder="utm_medium" />
-														<input type="hidden" name="utm_campaign" id="utm_campaign"
-															placeholder="utm_campaign" />
-														<input type="hidden" name="utm_content" id="utm_content"
-															placeholder="utm_content" />
-														<input type="hidden" name="utm_term" id="utm_term"
-															placeholder="utm_term" />
-														<input type="hidden" name="gclid" id="gclid"
-															placeholder="gclid" />
-														<input type="hidden" name="fbclid" id="fbclid"
-															placeholder="fbclid" />
-														<input type="Lead-source" name="Lead-source" id="Lead-source"
-															value="Calendly" />
-														<input type="Secondary-Lead-Source" name="Secondary-Lead-Source"
-															id="Secondary-Lead-Source" value="Chilipiper" />
-													</div>
-													<input class="button w-button"
-														data-wf-component-context="%5B%7B%22componentId%22%3A%22dbbcaa5b-0878-aaa0-f101-b602bdcba988%22%2C%22instanceId%22%3A%220b3daffa-452c-125f-7702-c08c3ad59792%22%7D%2C%7B%22componentId%22%3A%22365e5011-0c02-029c-8c31-cf84875061a6%22%2C%22instanceId%22%3A%22dbbcaa5b-0878-aaa0-f101-b602bdcba996%22%7D%5D"
-														data-wf-element-id="83400205-2f57-4f45-9292-8f046a9f3f12"
-														data-wf-event-ids="157030986-157030988-157030987-157033696-157036533-157036534-157036537-157038412-157048519"
-														data-wait="Please wait..." type="submit"
-														data-wf-native-id-path="0b3daffa-452c-125f-7702-c08c3ad59792:dbbcaa5b-0878-aaa0-f101-b602bdcba996:83400205-2f57-4f45-9292-8f046a9f3f12"
-														data-wf-ao-click-engagement-tracking="true"
-														value="<%= submitLabel %>" />
-													<div class="script_wrapper">
-														<div class="script_chilipiper-setup w-embed w-script">
-															<!-- Load Chili Piper -->
-															<script src="external/js/script-js-chilipiper-com.js"
-																type="text/javascript"></script>
-															<link rel="stylesheet" href="inline/style-16.css" />
-														</div>
-														<div class="script_chilipiper-submission w-embed w-script">
-															<!-- Chili Piper submission script -->
-															<script src="inline/script-36.js"></script>
-															<!-- Base Chili Piper script -->
-															<!--
+							</div>
+						</div>
+						<div class="w-optimization">
+							<div data-wf-experience-417234632="" data-wf-variation-617118717="" class="w-optimization">
+								<p animate="false" class="text-size-medium">
+									<%= bodyPrimary %>
+										<br />
+								</p>
+							</div>
+							<div data-wf-experience-417234632="" data-wf-variation-617118716=""
+								data-wf-hidden-variation="" class="w-optimization">
+								<p class="text-size-medium">
+									Get Veo Live for free and start live streaming your matches. Save
+									<span data-region-visibility="UNKI">£579</span>
+									<span data-region-visibility="NAMA">$759</span>
+									<span data-region-visibility="LATA">$599</span>
+									<span data-region-visibility="SHIM">759 €</span>
+									<span data-region-visibility="PCAN">AU$1159</span>
+									<span data-region-visibility="SSAF, ASIA, EURO, MENA, DNMK">639 €</span>
+									on this special, limited-time bundle. Reach out to our sales team today to
+									claim the offer!
+									<br />
+								</p>
+							</div>
+						</div>
+						<div class="w-optimization">
+							<div data-wf-experience-417226224="" data-wf-variation-617100100="" class="w-optimization">
+							</div>
+							<div data-wf-experience-417226224="" data-wf-variation-617100101=""
+								data-wf-hidden-variation="" class="w-optimization">
+								<p class="text-size-medium">
+									<%= bodyTertiary %>
+								</p>
+							</div>
+						</div>
+						<div class="margin-top margin-medium">
+							<div class="button-group is-center">
+								<div class="form_component">
+									<div id="form-block-component" data-disable-empty-option=""
+										class="form_component w-form">
+										<form method="get" ga-submit="form_submission" name="wf-form-Form-Component"
+											data-name="Form Component" form-name="Sales Call Form"
+											id="wf-form-Form-Component" class="form_layout"
+											data-wf-page-id="65c1f26994399a0f1f11409b"
+											data-wf-element-id="365e5011-0c02-029c-8c31-cf84875061a8">
+											<div class="form_field-wrapper">
+												<label for="Full-Name" class="form_field-label">Name*</label>
+												<input class="form_input w-input" maxlength="256" name="Full-Name"
+													data-name="Full Name" placeholder="Full name" type="text"
+													id="Full-Name" required="" />
+											</div>
+											<div class="form_field-wrapper">
+												<label for="Phone-Plain" class="form_field-label">Number*</label>
+												<input class="form_input w-input" maxlength="256" name="Phone-Plain"
+													data-int-phone="" data-name="Phone-Plain" placeholder="22 33 44 55"
+													type="tel" id="Phone-Plain" required="" />
+												<div class="form_phone-validation">
+													<div class="form_validation-text">Invalid number</div>
+													<div class="form_validation-text">Invalid country code</div>
+													<div class="form_validation-text">Too short</div>
+													<div class="form_validation-text">Too long</div>
+												</div>
+												<div class="form_input-hidden w-embed">
+													<input type="text" name="phone-number" required="" id="phone_number"
+														placeholder="Complete phone number" style="display:none;" />
+													<input type="hidden" name="Country" id="country"
+														placeholder="Country" />
+												</div>
+											</div>
+											<div class="form_field-wrapper">
+												<label for="Inquiry" class="form_field-label">Inquiry*</label>
+												<input class="form_input w-input" maxlength="256" name="Inquiry"
+													data-name="Inquiry" placeholder="Inquiry" type="text" id="Inquiry"
+													required="" />
+											</div>
+											<div class="form_field-wrapper">
+												<label for="Help-Today" class="form_field-label">What can we help you
+													with today?*</label>
+												<textarea placeholder="Tell us more" maxlength="5000" id="Help-Today"
+													name="Help-Today" data-name="Help Today"
+													class="form_input is-text-area w-input" required=""></textarea>
+											</div>
+											<label class="w-checkbox form_checkbox" id="sms-consent-wrapper"
+												data-display="flex">
+												<div
+													class="w-checkbox-input w-checkbox-input--inputType-custom form_checkbox-icon">
+												</div>
+												<input type="checkbox" name="SMS-Consent" id="SMS-Consent"
+													data-name="SMS Consent"
+													style="opacity:0;position:absolute;z-index:-1" />
+												<span for="SMS-Consent" class="form_checkbox-label w-form-label">I
+													consent to receive SMS updates.</span>
+											</label>
+											<div class="form_input-hidden w-embed">
+												<input type="hidden" name="Page URL" id="page_url" data-current-page=""
+													placeholder="Page URL" />
+												<input type="hidden" name="utm_source" id="utm_source"
+													placeholder="utm_source" />
+												<input type="hidden" name="utm_medium" id="utm_medium"
+													placeholder="utm_medium" />
+												<input type="hidden" name="utm_campaign" id="utm_campaign"
+													placeholder="utm_campaign" />
+												<input type="hidden" name="utm_content" id="utm_content"
+													placeholder="utm_content" />
+												<input type="hidden" name="utm_term" id="utm_term"
+													placeholder="utm_term" />
+												<input type="hidden" name="gclid" id="gclid" placeholder="gclid" />
+												<input type="hidden" name="fbclid" id="fbclid" placeholder="fbclid" />
+												<input type="Lead-source" name="Lead-source" id="Lead-source"
+													value="Calendly" />
+												<input type="Secondary-Lead-Source" name="Secondary-Lead-Source"
+													id="Secondary-Lead-Source" value="Chilipiper" />
+											</div>
+											<input class="button w-button"
+												data-wf-component-context="%5B%7B%22componentId%22%3A%22dbbcaa5b-0878-aaa0-f101-b602bdcba988%22%2C%22instanceId%22%3A%220b3daffa-452c-125f-7702-c08c3ad59792%22%7D%2C%7B%22componentId%22%3A%22365e5011-0c02-029c-8c31-cf84875061a6%22%2C%22instanceId%22%3A%22dbbcaa5b-0878-aaa0-f101-b602bdcba996%22%7D%5D"
+												data-wf-element-id="83400205-2f57-4f45-9292-8f046a9f3f12"
+												data-wf-event-ids="157030986-157030988-157030987-157033696-157036533-157036534-157036537-157038412-157048519"
+												data-wait="Please wait..." type="submit"
+												data-wf-native-id-path="0b3daffa-452c-125f-7702-c08c3ad59792:dbbcaa5b-0878-aaa0-f101-b602bdcba996:83400205-2f57-4f45-9292-8f046a9f3f12"
+												data-wf-ao-click-engagement-tracking="true"
+												value="<%= submitLabel %>" />
+											<div class="script_wrapper">
+												<div class="script_chilipiper-setup w-embed w-script">
+													<!-- Load Chili Piper -->
+													<script src="external/js/script-js-chilipiper-com.js"
+														type="text/javascript"></script>
+													<link rel="stylesheet" href="inline/style-16.css" />
+												</div>
+												<div class="script_chilipiper-submission w-embed w-script">
+													<!-- Chili Piper submission script -->
+													<script src="inline/script-36.js"></script>
+													<!-- Base Chili Piper script -->
+													<!--
 <script>
   function q(a){return function(){ChiliPiper[a].q=(ChiliPiper[a].q||[]).concat([arguments])}}
   window.ChiliPiper||"submit scheduling showCalendar submit widget bookMeeting".split(" ").reduce(function(a,b){a[b]=q(b);return a},{}); 
   ChiliPiper.scheduling("veo-co", "webflow-router", {title: "Thanks! What time works best for a quick call?"});
 </script>
 -->
-														</div>
-														<div class="script_form-calendly-redirect w-embed w-script">
-															<script src="inline/script-37.js"></script>
-														</div>
-													</div>
-												</form>
-												<div class="form_message-success w-form-done">
-													<div class="text-align-center">
-														<h2 class="heading-style-h3"><%= successHeading %></h2>
-														<div class="margin-top margin-small">
-															<div class="button-group is-center"></div>
-														</div>
-													</div>
 												</div>
-												<div class="error-message w-form-fail">
-													<div class="error-text"><%= errorText %></div>
+												<div class="script_form-calendly-redirect w-embed w-script">
+													<script src="inline/script-37.js"></script>
 												</div>
+											</div>
+										</form>
+										<div class="form_message-success w-form-done">
+											<div class="text-align-center">
+												<h2 class="heading-style-h3">
+													<%= successHeading %>
+												</h2>
+												<div class="margin-top margin-small">
+													<div class="button-group is-center"></div>
+												</div>
+											</div>
+										</div>
+										<div class="error-message w-form-fail">
+											<div class="error-text">
+												<%= errorText %>
 											</div>
 										</div>
 									</div>
@@ -170,4 +194,6 @@ const errorText = contactData.errorText || 'Oops! Something went wrong while sub
 						</div>
 					</div>
 				</div>
-			</aside>
+			</div>
+		</div>
+	</aside>

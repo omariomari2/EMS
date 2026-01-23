@@ -18,4 +18,8 @@ router.get('/user/:slug', (req, res) => {
   res.render('pages/user', { data: { slug: req.params.slug } });
 });
 
+router.use((req, res) => {
+  res.status(404).render('pages/404', { data: {} });
+});
+
 module.exports = router;

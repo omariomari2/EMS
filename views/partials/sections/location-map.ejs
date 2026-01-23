@@ -1,0 +1,203 @@
+﻿<section class="section_map">
+	<div class="padding-global">
+		<div class="container-large">
+			<div class="padding-section-large">
+				<div class="map-section_layout">
+					<div class="map-section_content-wrapper">
+						<div class="map-section_header">
+							<div class="heading-style-tagline">Location</div>
+							<h2 class="heading-style-h2">Kabaka 2 Plaza</h2>
+							<p class="text-size-medium">Located in the heart of East Legon, offering premium
+								accessibility and visibility.</p>
+							<div class="margin-top margin-small text-style-muted">
+								Near MV8C+M7F, Ogbodjo<br>
+								Accra, Ghana
+							</div>
+						</div>
+						<div class="margin-top margin-medium map-section_actions">
+							<a class="button w-button" target="_blank" rel="noopener"
+								href="https://www.google.com/maps/search/?api=1&query=Near%20MV8C%2BM7F%2C%20Ogbodjo%2C%20Accra%2C%20Ghana">
+								Get Directions
+							</a>
+						</div>
+					</div>
+					<div class="map-section_card">
+						<div id="kabaka-map" class="map-section_canvas" role="img"
+							aria-label="Map showing Kabaka Plaza near Ogbodjo, Accra, Ghana"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="w-embed">
+		<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
+		<style>
+			.section_map,
+			.section_map .padding-global,
+			.section_map .padding-section-large {
+				background-color: transparent !important;
+			}
+
+
+			.map-section_layout {
+				display: grid;
+				grid-template-columns: 1fr 1.25fr;
+				gap: 4rem;
+				align-items: center;
+			}
+
+			.map-section_content-wrapper {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+			}
+
+			.map-section_header {
+				display: grid;
+				gap: 0.75rem;
+			}
+
+			.map-section_card {
+				overflow: hidden;
+				border-radius: 1.5rem;
+				background-color: transparent;
+				box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+				border: 1px solid rgba(0, 0, 0, 0.05);
+				/* Subtle border */
+				position: relative;
+				height: 100%;
+			}
+
+			.map-section_canvas {
+				width: 100%;
+				height: 35rem;
+				/* Taller on desktop */
+				min-height: 25rem;
+				background-color: transparent;
+				/* Fallback */
+				z-index: 1;
+			}
+
+			.map-section_actions {
+				display: flex;
+				justify-content: flex-start;
+			}
+
+			/* Custom Control Styling */
+			.leaflet-control-recenter {
+				background-color: #fff;
+				border: 2px solid rgba(0, 0, 0, 0.2);
+				border-radius: 4px;
+				cursor: pointer;
+				padding: 5px 10px;
+				font-weight: 600;
+				font-size: 0.85rem;
+				box-shadow: 0 1px 5px rgba(0, 0, 0, 0.4);
+				transition: background-color 0.2s;
+			}
+
+			.leaflet-control-recenter:hover {
+				background-color: #f4f4f4;
+			}
+
+			@media (max-width: 991px) {
+				.map-section_layout {
+					grid-template-columns: 1fr;
+					gap: 2.5rem;
+				}
+
+				.map-section_canvas {
+					height: 28rem;
+				}
+
+				.map-section_content-wrapper {
+					text-align: center;
+					align-items: center;
+					/* Center content on mobile */
+				}
+
+				.map-section_header {
+					justify-items: center;
+					/* Center grid items */
+				}
+
+				.map-section_actions {
+					justify-content: center;
+				}
+			}
+		</style>
+	</div>
+	<div class="w-embed w-script">
+		<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+		<script>
+			window.addEventListener('load', function () {
+				var mapEl = document.getElementById('kabaka-map');
+				if (!mapEl || mapEl.dataset.mapReady) return;
+				mapEl.dataset.mapReady = 'true';
+
+				if (!window.L) return;
+
+				var targetLoc = { lat: 5.6516, lng: -0.1843 };
+				var map = L.map(mapEl, {
+					zoomControl: true,
+					attributionControl: false,
+					scrollWheelZoom: false /* Disable scroll zoom for better page scroll UX */
+				});
+
+				map.setView([targetLoc.lat, targetLoc.lng], 15);
+
+				// CartoDB Positron (Cleaner, grayscale look)
+				L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+					attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+					subdomains: 'abcd',
+					maxZoom: 20
+				}).addTo(map);
+
+				var marker = L.marker([targetLoc.lat, targetLoc.lng]).addTo(map);
+				marker.bindPopup('<b>Kabaka 2 Plaza</b><br>East Legon, Accra').openPopup();
+
+				// Try to Refine Location via API
+				var query = 'Kabaka Plaza, Near MV8C+M7F, Ogbodjo, Accra, Ghana';
+				fetch('https://nominatim.openstreetmap.org/search?format=json&limit=1&q=' + encodeURIComponent(query))
+					.then(function (response) { return response.json(); })
+					.then(function (results) {
+						if (results && results[0]) {
+							var lat = parseFloat(results[0].lat);
+							var lon = parseFloat(results[0].lon);
+							if (!Number.isNaN(lat) && !Number.isNaN(lon)) {
+								targetLoc = { lat: lat, lng: lon }; // Update target
+								marker.setLatLng([lat, lon]);
+								map.setView([lat, lon], 16);
+							}
+						}
+					})
+					.catch(function () { });
+
+				// Custom "Re-center" Control
+				var RecenterControl = L.Control.extend({
+					options: {
+						position: 'topleft' // Place near zoom controls
+					},
+					onAdd: function (map) {
+						var container = L.DomUtil.create('div', 'leaflet-bar leaflet-control leaflet-control-recenter');
+						container.innerHTML = '⌖ Re-center';
+						container.title = "Move map back to Kabaka Plaza";
+						container.style.backgroundColor = 'white';
+						container.style.width = 'auto';
+						container.style.height = 'auto';
+						container.style.padding = '5px 8px';
+						container.style.cursor = 'pointer';
+
+						container.onclick = function (e) {
+							e.preventDefault();
+							e.stopPropagation(); // Prevent map click-through
+							map.setView([targetLoc.lat, targetLoc.lng], 16, { animate: true });
+						}
+						return container;
+					}
+				});
+				map.addControl(new RecenterControl());
+			});
+		</script>
+	</div>
+</section>
