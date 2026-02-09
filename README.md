@@ -1,6 +1,6 @@
 [Inmigration Assistant Interface for TFR Hackathon](https://webpager.onrender.com/) <br> 
 
-[CMF Conference 2026](https://conference-qbav.onrender.com/) <br> 
+[CMC Conference 2026](https://conference-qbav.onrender.com/) <br> 
 
 [Ghana Naimos](https://dog-x7wp.onrender.com/) <br>
 
