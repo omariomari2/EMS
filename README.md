@@ -6,10 +6,10 @@
 [Plaza Interface 1](https://veo-18a6.onrender.com/) <br> 
 [Plaza Interface 2](https://omariomari2.github.io/EMS/) <br>
 
-[Orda Rides Interface 1](https://www.ordarides.com/) <br>
-[Orda Rides Interface 2](https://brigdethe.github.io/Community-Ride-Sharing-App/)(Flagged as insecure due to github configurations, bypass warninig to acess site P.S It's secure)<br>
+[Orda Rides](https://www.ordarides.com/) <br>
 
 [CMC Conference 2026](https://conference-qbav.onrender.com/) <br> 
+[CMC Conference 2026 Initial](https://conference2.onrender.com/) <br> 
 
 [Ghana Naimos](https://dog-x7wp.onrender.com/) <br>
 
