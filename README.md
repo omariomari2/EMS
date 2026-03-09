@@ -1,6 +1,6 @@
 [Immigration Assistant Interface for TFR Hackathon](https://webpager.onrender.com/) <br> 
 
-[Go-Shop Interface 1](https://omariomari2.github.io/Go-Shop/index.html) <br>
+[Go-Shop Interface 1](https://goshopghana.com/) <br>
 [Go-Shop Interface 2](https://ems-woad-kappa.vercel.app/)<br>
 
 [Plaza Interface 1](https://veo-18a6.onrender.com/) <br> 
