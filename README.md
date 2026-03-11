@@ -8,8 +8,8 @@
 
 [Orda Rides](https://www.ordarides.com/) <br>
 
-[CMC Conference 2026](https://conference-qbav.onrender.com/) <br> 
-[CMC Conference 2026 Initial](https://conference2.onrender.com/) <br> 
+[CMC Conference 2026 Final](https://seminar.cmc-ghana.com) <br> 
+[CMC Conference 2026 Interface 1](https://conference-qbav.onrender.com/) <br> 
 
 [Ghana Naimos](https://dog-x7wp.onrender.com/) <br>
 
